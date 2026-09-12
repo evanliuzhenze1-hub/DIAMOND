@@ -81,8 +81,8 @@
         <div class="flex items-center space-x-3 text-center sm:text-left">
           <div class="bg-cyan-900/80 text-cyan-400 p-3 rounded-xl border border-cyan-500/50 text-2xl">🤖</div>
           <div>
-            <h2 class="text-2xl font-black text-cyan-400 tracking-wide">DIAMOND COMPUTRON™</h2>
-            <p class="text-xs text-slate-400">Interactive OTC & Therapeutics Selector • ADVANCED Engine v6.0</p>
+            <h2 class="text-2xl font-black text-cyan-400 tracking-wide">DIAMOND COMPUTRON™ 7</h2>
+            <p class="text-xs text-slate-400">Interactive OTC, Therapeutics & Skincare Selector • Version 7.0</p>
           </div>
         </div>
         <span class="text-xs font-mono bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-full border border-cyan-800">
@@ -96,121 +96,68 @@
         <div class="flex justify-between items-center max-w-xl mx-auto text-xs font-bold uppercase tracking-wider">
           <div id="prog-step-1" class="flex items-center gap-2 text-cyan-400">
             <span class="w-6 h-6 rounded-full bg-cyan-500 text-slate-950 flex items-center justify-center font-black">1</span>
-            <span>Patient</span>
+            <span>Category</span>
           </div>
           <div class="h-0.5 bg-slate-800 flex-1 mx-2"></div>
           <div id="prog-step-2" class="flex items-center gap-2 text-slate-500">
             <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-black">2</span>
-            <span>Symptom</span>
+            <span>Target</span>
           </div>
           <div class="h-0.5 bg-slate-800 flex-1 mx-2"></div>
           <div id="prog-step-3" class="flex items-center gap-2 text-slate-500">
             <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-black">3</span>
-            <span>Preference</span>
+            <span>Results</span>
           </div>
         </div>
 
-        <!-- WIZARD STEP 1: Patient Type -->
+        <!-- WIZARD STEP 1: Patient / Category Type -->
         <div id="wizard-step-1" class="space-y-6">
           <div class="text-center space-y-1">
-            <h3 class="text-xl font-bold text-slate-100">Step 1: Who is the medication for?</h3>
-            <p class="text-sm text-slate-400">Select the patient category to narrow down appropriate age groups and precautions.</p>
+            <h3 class="text-xl font-bold text-slate-100">Step 1: Select Treatment Category</h3>
+            <p class="text-sm text-slate-400">Choose the primary area of focus to narrow down appropriate solutions.</p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <button onclick="selectPatient('adult')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <button onclick="selectCategory('adult')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">👤</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Adult / Senior</div>
-              <div class="text-xs text-slate-400">Age 12+ years. Standard tablet, caplet, or effervescent formulations.</div>
+              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Adult Oral Care</div>
+              <div class="text-xs text-slate-400">Age 12+ years. Analgesics, fever reduction, cold & flu relief.</div>
             </button>
 
-            <button onclick="selectPatient('pediatric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
+            <button onclick="selectCategory('pediatric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">👶</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Pediatric (1–12 Yrs)</div>
-              <div class="text-xs text-slate-400">Children under 12. Requires alcohol-free & sugar-free oral syrups.</div>
+              <div class="text-xs text-slate-400">Children under 12. Alcohol-free & sugar-free oral syrups.</div>
             </button>
 
-            <button onclick="selectPatient('gastric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
+            <button onclick="selectCategory('gastric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">🛡️</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Sensitive Stomach</div>
-              <div class="text-xs text-slate-400">History of acid reflux, hyperacidity, or stomach sensitivity to painkillers.</div>
+              <div class="text-xs text-slate-400">Buffered formulas for acid reflux or hyperacidity.</div>
+            </button>
+            
+            <button onclick="selectCategory('skincare')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
+              <div class="text-3xl">✨</div>
+              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Dermatology & Skin</div>
+              <div class="text-xs text-slate-400">Diamond Solace, clinical topicals, barriers, and UV defense.</div>
             </button>
           </div>
         </div>
 
-        <!-- WIZARD STEP 2: Primary Symptom -->
+        <!-- WIZARD STEP 2: Secondary Focus -->
         <div id="wizard-step-2" class="space-y-6 hidden">
           <div class="text-center space-y-1">
-            <h3 class="text-xl font-bold text-slate-100">Step 2: What primary symptom are you experiencing?</h3>
-            <p class="text-sm text-slate-400">Choose the main indication Computron should target.</p>
+            <h3 class="text-xl font-bold text-slate-100">Step 2: Define your target need</h3>
+            <p class="text-sm text-slate-400">Select all relevant indications.</p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <button onclick="selectSymptom('fever')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">🤒</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Fever & Headaches</div>
-              <div class="text-xs text-slate-400">Acute fever, tension headache, body ache, or tooth pain.</div>
-            </button>
-
-            <button onclick="selectSymptom('cough')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">🫁</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Wet Mucus Cough</div>
-              <div class="text-xs text-slate-400">Thick phlegm, chest congestion, or bronchial secretion buildup.</div>
-            </button>
-
-            <button onclick="selectSymptom('night_cold')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">🌙</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Nighttime Cold & Pain</div>
-              <div class="text-xs text-slate-400">Pain or cold symptoms preventing restful sleep at night.</div>
-            </button>
-
-            <button onclick="selectSymptom('allergy')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">🤧</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Allergies & Hives</div>
-              <div class="text-xs text-slate-400">Sneezing, runny nose, watery eyes, skin rashes, or eczema irritation.</div>
-            </button>
-
-            <button onclick="selectSymptom('joint_pain')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">💥</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Inflammation / Sprains</div>
-              <div class="text-xs text-slate-400">Swelling, severe cramps, dental extraction pain, or joint aches.</div>
-            </button>
-
-            <button onclick="selectSymptom('immunity')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
-              <div class="text-2xl">🍊</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Immunity & Recovery</div>
-              <div class="text-xs text-slate-400">Daily antioxidant protection or recovering from flu lethargy.</div>
-            </button>
+          <!-- Dynamic Options based on Step 1 will be loaded here via JS -->
+          <div id="step-2-options" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Populated by JS -->
           </div>
 
-          <div class="text-center pt-2">
-            <button onclick="goBackToStep(1)" class="text-xs text-slate-400 hover:text-cyan-400 underline">← Back to Patient Category</button>
-          </div>
-        </div>
-
-        <!-- WIZARD STEP 3: Dosage / Format Preference -->
-        <div id="wizard-step-3" class="space-y-6 hidden">
-          <div class="text-center space-y-1">
-            <h3 class="text-xl font-bold text-slate-100">Step 3: Preferred Dosage Form</h3>
-            <p class="text-sm text-slate-400">How do you prefer taking your therapeutic medication?</p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <button onclick="computeResults('effervescent')" class="p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-2 group">
-              <div class="text-3xl">🥤</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Effervescent / Fast Dissolve</div>
-              <div class="text-xs text-slate-400">Dissolves in water for maximum absorption speed and easy swallowing.</div>
-            </button>
-
-            <button onclick="computeResults('tablet')" class="p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-2 group">
-              <div class="text-3xl">💊</div>
-              <div class="font-bold text-slate-200 group-hover:text-cyan-400">Standard / Extended Tablets</div>
-              <div class="text-xs text-slate-400">Convenient swallowed tablets or sustained-release dual-layer caplets.</div>
-            </button>
-          </div>
-
-          <div class="text-center pt-2">
-            <button onclick="goBackToStep(2)" class="text-xs text-slate-400 hover:text-cyan-400 underline">← Back to Symptom Selection</button>
+          <div class="text-center pt-4">
+            <button onclick="goBackToStep(1)" class="text-xs text-slate-400 hover:text-cyan-400 underline">← Back to Category Selection</button>
           </div>
         </div>
 
@@ -220,7 +167,7 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-cyan-800/80 pb-4">
               <div>
                 <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Computron Diagnostic Recommendation</span>
-                <h3 id="res-title" class="text-2xl font-black text-white">Recommended Therapeutics</h3>
+                <h3 id="res-title" class="text-2xl font-black text-white">Recommended Products</h3>
               </div>
               <button onclick="resetWizard()" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs px-3 py-1.5 rounded-lg border border-cyan-700 transition">
                 🔄 Start Over
@@ -228,17 +175,17 @@
             </div>
 
             <!-- Product Suggestion Cards Grid -->
-            <div id="res-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div id="res-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <!-- Dynamically Populated by JS -->
             </div>
 
             <!-- Safety Note Box -->
-            <div class="bg-slate-900/90 p-4 rounded-lg border border-amber-500/40 space-y-1 text-xs text-slate-300">
+            <div class="bg-slate-900/90 p-4 rounded-lg border border-amber-500/40 space-y-1 text-xs text-slate-300 mt-6">
               <p class="font-bold text-amber-400 flex items-center gap-1.5">
-                <span>⚠️</span> Computron Safety Notice & Paracetamol Limits:
+                <span>⚠️</span> Computron Safety Notice:
               </p>
               <p id="res-safety-text">
-                Always ensure you do not exceed 4,000 mg of paracetamol within 24 hours across all combined products. Read instructions carefully before administration.
+                Always ensure you do not exceed recommended dosages. Read instructions carefully before administration or application. Consult a healthcare provider for persistent conditions.
               </p>
             </div>
           </div>
@@ -480,121 +427,54 @@
     <p class="text-xs text-slate-500 mt-2">Information provided on this site is for educational support and does not replace direct professional advice from your physician or pharmacist.</p>
   </footer>
 
-  <!-- ADVANCED DIAMOND COMPUTRON 6 ENGINE SCRIPT -->
+  <!-- DIAMOND COMPUTRON ENGINE SCRIPT (COMPUTRON 7) -->
   <script>
     let wizardState = {
-      patient: null,
-      symptom: null,
-      format: null
+      category: null,
+      target: null
     };
 
-    // Advanced Engine Product Database Array
-    const diamondProducts = [
-      { 
-        name: "Diapaemol Children's Syrup", 
-        tag: "Oral Syrup • 120 mL", 
-        price: "RM 12.50", 
-        target: ["pediatric"], 
-        sym: ["fever", "night_cold", "joint_pain"], 
-        fmt: ["syrup"], 
-        desc: "Alcohol-free & sugar-free relief for children 1-12 years. Available in Wild Berry or Root Beer flavor." 
-      },
-      { 
-        name: "Diacof Junior Expectorant", 
-        tag: "Oral Syrup • 100 mL", 
-        price: "RM 14.00", 
-        target: ["pediatric"], 
-        sym: ["cough"], 
-        fmt: ["syrup"], 
-        desc: "Breaks down thick mucus for children. Gentle Strawberry flavor." 
-      },
-      { 
-        name: "Diazenitine Kids", 
-        tag: "Allergy Syrup • 60 mL", 
-        price: "RM 16.50", 
-        target: ["pediatric"], 
-        sym: ["allergy", "immunity"], 
-        fmt: ["syrup"], 
-        desc: "Non-drowsy 24h allergy and sniffle relief for kids." 
-      },
-      { 
-        name: "Diamol ULTRA", 
-        tag: "Effervescent Tabs • 16s", 
-        price: "RM 15.00", 
-        target: ["adult", "gastric"], 
-        sym: ["fever", "joint_pain", "night_cold"], 
-        fmt: ["effervescent"], 
-        desc: "Fast acting paracetamol. Dissolves rapidly, gentle on the stomach lining." 
-      },
-      { 
-        name: "Diamol Extend", 
-        tag: "Dual-Layer Caplet • 20s", 
-        price: "RM 18.00", 
-        target: ["adult", "gastric"], 
-        sym: ["fever", "joint_pain", "night_cold"], 
-        fmt: ["tablet"], 
-        desc: "Long-lasting 8-hour relief for sustained fever and body aches." 
-      },
-      { 
-        name: "Diacof Forte 600", 
-        tag: "Effervescent Tabs • 10s", 
-        price: "RM 22.00", 
-        target: ["adult", "gastric"], 
-        sym: ["cough"], 
-        fmt: ["effervescent"], 
-        desc: "Intensive chest congestion clearing action. Dissolves fully in water." 
-      },
-      { 
-        name: "Diacof Supress", 
-        tag: "Lozenges / Tabs • 24s", 
-        price: "RM 14.50", 
-        target: ["adult"], 
-        sym: ["cough"], 
-        fmt: ["tablet"], 
-        desc: "Soothes irritated throat and suppresses dry, tickly coughs." 
-      },
-      { 
-        name: "Diaprofen 400", 
-        tag: "Film-coated Tablets", 
-        price: "RM 10.50", 
-        target: ["adult"], 
-        sym: ["joint_pain", "fever"], 
-        fmt: ["tablet"], 
-        desc: "Targeted NSAID for inflammation and severe sprains. (Avoid if sensitive stomach)." 
-      },
-      { 
-        name: "Diazenitine Rapid", 
-        tag: "Fast-Melt Tablet • 10s", 
-        price: "RM 19.50", 
-        target: ["adult", "gastric"], 
-        sym: ["allergy"], 
-        fmt: ["tablet", "effervescent"], 
-        desc: "Melts on the tongue instantly for rapid hive and sneeze relief without water." 
-      },
-      { 
-        name: "Diamond-C 1000mg", 
-        tag: "Effervescent • 15s", 
-        price: "RM 25.00", 
-        target: ["adult", "gastric"], 
-        sym: ["immunity"], 
-        fmt: ["effervescent"], 
-        desc: "High-dose Vitamin C + Zinc formulation for optimal immunity boosting." 
-      },
-      { 
-        name: "Diamond-C Defence", 
-        tag: "Chewable Tablet • 30s", 
-        price: "RM 28.00", 
-        target: ["adult", "gastric"], 
-        sym: ["immunity"], 
-        fmt: ["tablet"], 
-        desc: "Daily immune system support in a highly convenient chewable format." 
-      }
+    // The Computron 7 Database ensuring ALL products from screenshots are loaded and available
+    const productDatabase = [
+      // From image_54d50a.png
+      { category: "adult", target: "fever", tag: "Standard Analgesic", name: "Diamol® Standard", price: "RM 9.50", desc: "500 mg Paracetamol Tablets (Pack of 20). Essential non-aspirin antipyretic and analgesic for effective relief of mild-to-moderate headaches, toothaches, muscle discomfort, and fever.", source: "image_54d50a.png" },
+      { category: "adult", target: "fever", tag: "Enhanced Pain Relief", name: "Diamol® Plus", price: "RM 14.20", desc: "500 mg Paracetamol + 65 mg Caffeine (Pack of 20). Formulated with caffeine to amplify paracetamol's analgesic effect by up to 30%. Specially targeted for stubborn tension headaches.", source: "image_54d50a.png" },
+      { category: "adult", target: "pain", tag: "Extended Release", name: "Diamol® Pro", price: "RM 18.80", desc: "665 mg Paracetamol Dual-Layer SR Tablets (Pack of 18). Sustained-release bi-layer matrix delivering an immediate therapeutic dose combined with prolonged release.", source: "image_54d50a.png" },
+      
+      // From image_54d52a.png
+      { category: "adult", target: "fever", tag: "Rapid Caplets", name: "Diamol® ULTRA", price: "RM 22.50", desc: "500 mg Paracetamol soluble Opti-Tech (Pack of 20). Utilizes Opti-Tech disintegration technology to dissolve 5 times faster than ordinary paracetamol tablets.", source: "image_54d52a.png" },
+      { category: "adult", target: "immunity", tag: "Vitamin C + Zinc", name: "Diascorbion® Effervescent", price: "RM 28.00", desc: "1000 mg Ascorbic Acid + 10 mg Zinc (Tube of 15 Tablets). High-strength, fast-absorbing effervescent Vitamin C and elemental zinc defense formula.", source: "image_54d52a.png" },
+      { category: "adult", target: "cough", tag: "Respiratory Mucolytic", name: "Diacytene® Effervescent", price: "RM 24.50", desc: "600 mg Acetylcysteine Effervescent Tablets (Pack of 10). Potent mucolytic formulation that breaks down disulfide bonds in thick respiratory mucus.", source: "image_54d52a.png" },
+      { category: "adult", target: "pain", tag: "Dual Anti-Inflammatory", name: "Diarapimol®", price: "RM 16.50", desc: "500 mg Paracetamol + 200 mg Ibuprofen (Pack of 12). Combines central analgesic paracetamol with anti-inflammatory ibuprofen in a single tablet.", source: "image_54d52a.png" },
+      { category: "adult", target: "fever", tag: "Cold & Flu Formula", name: "Daxtramol®", price: "RM 15.00", desc: "Paracetamol 500 mg + Phenylephrine 10 mg + Vitamin C (Pack of 16). Multi-symptom cold and flu relief. Reduces fever, alleviates sinus pressure.", source: "image_54d52a.png" },
+      { category: "adult", target: "night", tag: "Nighttime Relief", name: "Diphamol®", price: "RM 13.80", desc: "Paracetamol 500 mg + Diphenhydramine 25 mg (Pack of 16 Caplets). Specially designed nighttime analgesic to help you fall asleep when pain or cold symptoms keep you awake.", source: "image_54d52a.png" },
+      
+      // From image_54d547.png
+      { category: "pediatric", target: "all", tag: "Pediatric & Junior Liquid", name: "Diapaemol® Oral Syrup", price: "RM 12.50", desc: "120 mg / 5 mL Paracetamol Suspension (120 mL). Fast, gentle fever reduction. Flavors: Midnight Mint, Honey Lemon Soothe, Ginger, Root Beer Fizz, Wild Berry Blast, Tropical Twist.", source: "image_54d547.png" },
+      
+      // From image_54d564.png
+      { category: "gastric", target: "all", tag: "Gastro-Protected", name: "Dipamavol®", price: "RM 11.20", desc: "500 mg Paracetamol + 100 mg Magnesium Hydroxide (Pack of 18). Buffered analgesic integrated with antacid compounds. Formulated specifically for sensitive gastric linings.", source: "image_54d564.png" },
+      
+      // From image_54d582.png
+      { category: "skincare", target: "care", tag: "Barrier Repair", name: "Diamond Solace Moisturiser", price: "RM 48.00", desc: "150 mL Cream • Ceramides, Hyaluronic Acid & Niacinamide. Rich, non-comedogenic moisture cream that restores the natural epidermal lipid barrier.", source: "image_54d582.png" },
+      { category: "skincare", target: "care", tag: "Resurfacing Complex", name: "Diamond Radiant Serum", price: "RM 68.00", desc: "30 mL Dropper • 2% BHA + Vit C + Niacinamide + AHA. All-in-one clarifying serum that evens out skin tone and restores natural radiance.", source: "image_54d582.png" },
+      { category: "skincare", target: "cleanse", tag: "Sensitive Skin", name: "Diamond Solace Gentle Cleanser", price: "RM 38.50", desc: "250 mL Bottle • Soap-Free & Fragrance-Free Lotion. Ultra-mild, non-foaming facial cleanser for hypersensitive or eczema-prone skin.", source: "image_54d582.png" },
+      { category: "skincare", target: "cleanse", tag: "Daily Hydrating Gel", name: "Diamond Solace All-Day Cleanser", price: "RM 42.00", desc: "200 mL Pump • pH 5.5 Hydrating Gel Cleanser. Balanced daily foaming gel wash designed for normal to dry skin.", source: "image_54d582.png" },
+      { category: "skincare", target: "cleanse", tag: "Exfoliating & Pore Care", name: "Diamond Solace Deep Cleanser", price: "RM 46.00", desc: "150 mL Tube • 2% Salicylic Acid (BHA) + Zinc PCA. Targeted purifying cleanser formulated to dissolve dead skin build-up and prevent blackheads.", source: "image_54d582.png" },
+      { category: "skincare", target: "protect", tag: "Broad Spectrum UV", name: "Diamond Solace SPF 45 Sunscreen + Moisturiser", price: "RM 55.00", desc: "60 mL Tube • Broad Spectrum UVA/UVB + Vitamin E. Lightweight 2-in-1 daily hydration lotion providing protection against photoaging.", source: "image_54d582.png" },
+      
+      // From image_54d5a2.png
+      { category: "skincare", target: "protect", tag: "Antioxidant Supplement", name: "Diamond Solace Heliocare X", price: "RM 168.00", desc: "60 Capsules • Fernblock® Extract 240mg + Green Tea. Oral photoprotective supplement. Defends skin cells against systemic UV damage.", source: "image_54d5a2.png" },
+      { category: "skincare", target: "treatment", tag: "Acne Spot Treatment", name: "Dibenzoyl® Gel", price: "RM 24.50", desc: "Benzoyl Peroxide 5% w/w • 30g Tube. Fast-acting antimicrobial gel that targets Cutibacterium acnes bacteria directly inside clogged pores.", source: "image_54d5a2.png" },
+      { category: "skincare", target: "treatment", tag: "Topical Antiviral", name: "Dilovirax® T Cream", price: "RM 21.00", desc: "Aciclovir 5% w/w • 5g Tube. Targeted antiviral cream for the early treatment of recurrent herpes labialis (cold sores) on the lips and face.", source: "image_54d5a2.png" },
+      { category: "skincare", target: "rx", tag: "Prescription Only", name: "Diamond Itch-Buster® Lipocream", price: "RX Required", desc: "Hydrocortisone Aceponate 0.127% w/w • 30g Tube. Potent Class II topical corticosteroid lipocream designed for acute flare-ups of severe eczema.", source: "image_54d5a2.png" },
+      { category: "skincare", target: "rx", tag: "Prescription Antibiotic", name: "Difucid® Cream", price: "RX Required", desc: "Fusidic Acid 2% w/w • 30g Tube. Topical antibacterial cream effective against primary and secondary skin infections.", source: "image_54d5a2.png" },
+      { category: "skincare", target: "rx", tag: "Prescription Retinoid", name: "Diadapalene® Gel", price: "RX Required", desc: "Adapalene 0.1% w/w • 30g Tube. Third-generation topical retinoid gel for the treatment of acne vulgaris.", source: "image_54d5a2.png" }
     ];
 
     function updateProgress(step) {
       for (let i = 1; i <= 3; i++) {
         const progEl = document.getElementById(`prog-step-${i}`);
-        if (!progEl) continue;
         if (i <= step) {
           progEl.className = 'flex items-center gap-2 text-cyan-400';
           progEl.children[0].className = 'w-6 h-6 rounded-full bg-cyan-500 text-slate-950 flex items-center justify-center font-black';
@@ -605,25 +485,67 @@
       }
     }
 
-    function selectPatient(type) {
-      wizardState.patient = type;
+    function selectCategory(type) {
+      wizardState.category = type;
       
-      document.getElementById('wizard-step-1').classList.add('hidden');
-      document.getElementById('wizard-step-2').classList.remove('hidden');
-      updateProgress(2);
-    }
-
-    function selectSymptom(sym) {
-      wizardState.symptom = sym;
-
-      if (wizardState.patient === 'pediatric') {
-        computeResults('syrup');
+      // Auto-skip step 2 if category is pediatric or gastric (only one product line shown)
+      if (type === 'pediatric' || type === 'gastric') {
+        computeResults('all');
         return;
       }
 
-      document.getElementById('wizard-step-2').classList.add('hidden');
-      document.getElementById('wizard-step-3').classList.remove('hidden');
-      updateProgress(3);
+      // Populate Step 2 dynamically based on category
+      const step2Container = document.getElementById('step-2-options');
+      let optionsHtml = '';
+      
+      if (type === 'adult') {
+        optionsHtml = `
+          <button onclick="computeResults('fever')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🤒</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Fever & General Pain</div>
+          </button>
+          <button onclick="computeResults('pain')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">💥</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Severe / Joint Pain</div>
+          </button>
+          <button onclick="computeResults('cough')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🫁</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Chest Congestion</div>
+          </button>
+          <button onclick="computeResults('night')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🌙</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Nighttime Cold</div>
+          </button>
+          <button onclick="computeResults('immunity')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🍊</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Immunity Support</div>
+          </button>
+          <button onclick="computeResults('all')" class="symptom-btn p-4 rounded-xl border-2 border-cyan-700 bg-cyan-900/40 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">💊</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Show All Adult OTC</div>
+          </button>
+        `;
+      } else if (type === 'skincare') {
+        optionsHtml = `
+          <button onclick="computeResults('cleanse')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🧼</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Cleansers</div>
+          </button>
+          <button onclick="computeResults('care')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">💧</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Moisturisers & Serums</div>
+          </button>
+          <button onclick="computeResults('protect')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">☀️</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">UV Protection</div>
+          </button>
+          <button onclick="computeResults('treatment')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">🎯</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Spot Treatments</div>
+          </button>
+          <button onclick="computeResults('rx')" class="symptom-btn p-4 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">⚕️</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Clinical Topicals (Rx)</div>
+          </button>
+          <button onclick="computeResults('all')" class="symptom-btn p-4 rounded-xl border-2 border-cyan-700 bg-cyan-900/40 hover:border-cyan-400 transition text-left space-y-1 group">
+            <div class="text-2xl">✨</div><div class="font-bold text-slate-200 group-hover:text-cyan-400">Show All Skincare</div>
+          </button>
+        `;
+      }
+
+      step2Container.innerHTML = optionsHtml;
+      document.getElementById('wizard-step-1').classList.add('hidden');
+      document.getElementById('wizard-step-2').classList.remove('hidden');
+      updateProgress(2);
     }
 
     function goBackToStep(step) {
@@ -631,88 +553,70 @@
         document.getElementById('wizard-step-2').classList.add('hidden');
         document.getElementById('wizard-step-1').classList.remove('hidden');
         updateProgress(1);
-      } else if (step === 2) {
-        document.getElementById('wizard-step-3').classList.add('hidden');
-        document.getElementById('wizard-step-2').classList.remove('hidden');
-        updateProgress(2);
       }
     }
 
-    function resetWizard() {
-      wizardState = { patient: null, symptom: null, format: null };
+    function computeResults(targetParam) {
+      wizardState.target = targetParam;
       
-      document.getElementById('wizard-results').classList.add('hidden');
-      document.getElementById('wizard-step-1').classList.remove('hidden');
-      
-      updateProgress(1);
-    }
-
-    function computeResults(format) {
-      wizardState.format = format;
-
       document.getElementById('wizard-step-1').classList.add('hidden');
       document.getElementById('wizard-step-2').classList.add('hidden');
-      document.getElementById('wizard-step-3').classList.add('hidden');
       document.getElementById('wizard-results').classList.remove('hidden');
+      updateProgress(3);
 
       const container = document.getElementById('res-cards-container');
       const title = document.getElementById('res-title');
       const safetyText = document.getElementById('res-safety-text');
-      
-      // Clear previous results
       container.innerHTML = '';
 
-      // Update contextual safety headers
-      if (wizardState.patient === 'pediatric') {
-        title.innerText = "Computron Recommendation: Pediatric Care";
-        safetyText.innerText = "Always use the calibrated dosage syringe included with pediatric syrups. Calculate dose strictly based on child's weight, not just age. Do not exceed 4 doses in 24 hours.";
-      } else if (wizardState.patient === 'gastric') {
-        title.innerText = "Computron Recommendation: Gastric-Safe Therapeutics";
-        safetyText.innerText = "These selections are formulated to be gentle on the stomach lining. Still, take with a full glass of water or after food to minimize any residual irritation. Avoid NSAIDs.";
+      // Determine matched products
+      let results = productDatabase.filter(p => p.category === wizardState.category);
+      if (wizardState.target !== 'all') {
+        results = results.filter(p => p.target === wizardState.target);
+      }
+
+      // Update titles and safety notes based on category
+      if (wizardState.category === 'pediatric') {
+        title.innerText = "Computron Recommendation: Pediatric Liquid Care";
+        safetyText.innerText = "Always use the calibrated dosage syringe included with Diapaemol syrup. Calculate dose strictly based on child weight or age. Do not exceed 4 doses in 24 hours.";
+      } else if (wizardState.category === 'gastric') {
+        title.innerText = "Computron Recommendation: Gastro-Protected Care";
+        safetyText.innerText = "While buffered, it is still advisable to chew or swallow these tablets with a full glass of water. Wait 2 hours before taking other medications.";
+      } else if (wizardState.category === 'skincare') {
+        title.innerText = "Computron Recommendation: Dermatological Line";
+        safetyText.innerText = "For external use only. Clinical med-topicals marked (Rx) require a physician's prescription. Perform a patch test prior to using new serums or retinoids.";
       } else {
         title.innerText = "Computron Recommendation: Target Therapeutics";
         safetyText.innerText = "Always ensure you do not exceed 4,000 mg of paracetamol within 24 hours across all combined products. Read instructions carefully before administration.";
       }
 
-      // Advanced Engine 6 Filtering Logic
-      const matches = diamondProducts.filter(prod => {
-        const matchesPatient = prod.target.includes(wizardState.patient);
-        const matchesSym = prod.sym.includes(wizardState.symptom);
-        const matchesFormat = wizardState.patient === 'pediatric' ? true : prod.fmt.includes(wizardState.format);
-        
-        return matchesPatient && matchesSym && matchesFormat;
-      });
-
-      // Handle No Match Scenario
-      if (matches.length === 0) {
-        container.innerHTML = `
-          <div class="bg-slate-800 p-8 rounded-xl border border-slate-600 space-y-4 md:col-span-2 text-center">
-            <h4 class="text-xl font-bold text-white">No Exact Match Found</h4>
-            <p class="text-slate-400 text-sm">Please consult a DIAMOND pharmacist for specialized recommendations suited for your specific symptoms and format preferences.</p>
-            <button onclick="resetWizard()" class="mt-2 text-cyan-400 hover:text-cyan-300 underline text-sm font-medium">Try another combination</button>
-          </div>
-        `;
-        return;
-      }
-
-      // Render Dynamically
-      matches.forEach(prod => {
-        container.innerHTML += `
-          <div class="bg-slate-900 p-6 rounded-xl border border-cyan-500/50 space-y-4 hover:border-cyan-400 transition group flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start mb-3 gap-2">
-                <span class="text-xs bg-cyan-900 text-cyan-200 px-2.5 py-1 rounded font-bold whitespace-nowrap">${prod.tag}</span>
-                <span class="text-lg font-black text-white whitespace-nowrap">${prod.price}</span>
-              </div>
-              <h4 class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition">${prod.name}</h4>
-              <p class="text-sm text-slate-300 mt-2 leading-relaxed">${prod.desc}</p>
+      // Render Cards
+      results.forEach(product => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-900 p-5 rounded-xl border border-cyan-500/50 space-y-3 flex flex-col justify-between h-full";
+        card.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex justify-between items-start gap-2">
+              <span class="text-xs bg-cyan-900 text-cyan-200 px-2.5 py-0.5 rounded font-bold whitespace-nowrap">${product.tag}</span>
+              <span class="text-lg font-bold text-white whitespace-nowrap">${product.price}</span>
             </div>
-            <button class="w-full mt-4 bg-cyan-600/20 hover:bg-cyan-600 text-cyan-300 hover:text-white font-bold py-2.5 rounded-lg border border-cyan-600 transition text-sm">
-              View Full Information →
-            </button>
+            <h4 class="text-xl font-bold text-cyan-400">${product.name}</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">${product.desc}</p>
+          </div>
+          <div class="pt-3 border-t border-slate-700/50 mt-4 text-[10px] text-slate-500 text-right uppercase tracking-wider">
+            Ref: ${product.source}
           </div>
         `;
+        container.appendChild(card);
       });
+    }
+
+    function resetWizard() {
+      wizardState = { category: null, target: null };
+      document.getElementById('wizard-results').classList.add('hidden');
+      document.getElementById('wizard-step-2').classList.add('hidden');
+      document.getElementById('wizard-step-1').classList.remove('hidden');
+      updateProgress(1);
     }
   </script>
 </body>
