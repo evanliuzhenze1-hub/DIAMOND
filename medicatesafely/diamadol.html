@@ -8,7 +8,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-  <nav class="bg-slate-900 text-white border-b border-rose-500">
+  <nav class="bg-slate-900 text-white border-b border-rose-500 sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <a href="../medicatesafely.html" class="text-xl font-black tracking-wider text-cyan-400">DIAMOND</a>
@@ -18,59 +18,72 @@
     </div>
   </nav>
 
-  <header class="bg-slate-900 text-white py-12 px-4 border-b border-slate-800">
-    <div class="max-w-4xl mx-auto space-y-3">
-      <div class="inline-block bg-rose-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Controlled Prescription Analgesic</div>
-      <h1 class="text-4xl font-extrabold">Diamadol® Patient Safety Guide</h1>
+  <header class="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 text-white py-16 px-4 text-center border-b border-slate-800">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="inline-block bg-rose-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider shadow">Controlled Prescription Analgesic</div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Diamadol® Patient Safety Guide</h1>
       <p class="text-slate-300 text-lg">Active Ingredient: Tramadol Hydrochloride 50 mg Capsules</p>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-12 space-y-8">
 
-    <div class="bg-rose-900 text-white p-6 rounded-xl shadow-lg space-y-2">
-      <h2 class="text-lg font-bold text-rose-200 flex items-center gap-2">
+    <div class="bg-rose-900 text-white p-6 sm:p-8 rounded-2xl shadow-xl space-y-2 border border-rose-700">
+      <h2 class="text-lg sm:text-xl font-bold text-rose-200 flex items-center gap-2">
         <span>⚠️</span> STRICT DAILY CEILING: 400 mg Maximum
       </h2>
-      <p class="text-rose-100 text-sm leading-relaxed">
+      <p class="text-rose-100 text-sm sm:text-base leading-relaxed">
         <strong>NEVER EXCEED 400 mg (8 capsules) IN ANY 24-HOUR PERIOD.</strong> Exceeding the maximum recommended daily dose significantly increases the risk of severe central nervous system depression, respiratory failure, and seizures.
       </p>
     </div>
 
-    <section class="bg-white p-8 rounded-xl shadow-md border border-slate-200 space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900">1. CNS Sedation & Alcohol Contraindications</h2>
-      <div class="space-y-4 text-sm text-slate-700">
-        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-          <h3 class="font-bold text-slate-900">Strict Alcohol Avoidance</h3>
-          <p class="text-slate-600 mt-1">Combining Diamadol® with alcohol or other CNS depressants (such as benzodiazepines or sleeping aids) can result in dangerous sedation, severe hypoventilation, coma, or fatal overdose.</p>
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 border-b pb-3 border-slate-100">1. CNS Sedation & Alcohol Contraindications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700">
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <span>🚫</span> Strict Alcohol Avoidance
+          </h3>
+          <p class="text-slate-600 leading-relaxed">Combining Diamadol® with alcohol or other CNS depressants (such as benzodiazepines or sleeping aids) can result in dangerous sedation, severe hypoventilation, coma, or fatal overdose.</p>
         </div>
-        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-          <h3 class="font-bold text-slate-900">Driving & Operating Machinery</h3>
-          <p class="text-slate-600 mt-1">Diamadol® causes somnolence, dizziness, and impaired motor reflexes. Do not drive, operate heavy machinery, or engage in hazardous activities while taking this medication.</p>
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+          <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <span>🚗</span> Driving & Operating Machinery
+          </h3>
+          <p class="text-slate-600 leading-relaxed">Diamadol® causes somnolence, dizziness, and impaired motor reflexes. Do not drive, operate heavy machinery, or engage in hazardous activities while taking this medication.</p>
         </div>
       </div>
     </section>
 
-    <section class="bg-white p-8 rounded-xl shadow-md border border-slate-200 space-y-4">
-      <h2 class="text-2xl font-bold text-slate-900">2. Administration & Interval Timing</h2>
-      <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm">
-        <li><strong>Standard Adult Dosing:</strong> 50 mg to 100 mg every 4 to 6 hours as needed for moderate to severe pain.</li>
-        <li>Swallow capsules whole with liquid. Do not open, chew, or crush capsules.</li>
-        <li><strong>Dependence & Tapering:</strong> Long-term use may lead to physical dependence. Do not stop taking Diamadol® abruptly without medical supervision to prevent withdrawal symptoms.</li>
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900 border-b pb-3 border-slate-100">2. Administration & Interval Timing</h2>
+      <ul class="space-y-4 text-slate-700 text-sm sm:text-base">
+        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <span class="text-rose-600 font-bold">•</span>
+          <div><strong>Standard Adult Dosing:</strong> 50 mg to 100 mg every 4 to 6 hours as needed for moderate to severe pain.</div>
+        </li>
+        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <span class="text-rose-600 font-bold">•</span>
+          <div>Swallow capsules whole with liquid. Do not open, chew, or crush capsules.</div>
+        </li>
+        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <span class="text-rose-600 font-bold">•</span>
+          <div><strong>Dependence & Tapering:</strong> Long-term use may lead to physical dependence. Do not stop taking Diamadol® abruptly without medical supervision to prevent withdrawal symptoms.</div>
+        </li>
       </ul>
     </section>
 
-    <div class="bg-slate-900 text-white p-6 rounded-xl flex justify-between items-center flex-wrap gap-4">
-      <div>
-        <h3 class="font-bold">Controlled Substance Safety Support</h3>
-        <p class="text-xs text-slate-400">Report adverse effects or inquire about opioid stewardship compliance.</p>
+    <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl flex justify-between items-center flex-wrap gap-6 shadow-xl border border-slate-800">
+      <div class="space-y-1">
+        <h3 class="font-bold text-lg text-rose-300">Controlled Substance Safety Support</h3>
+        <p class="text-xs sm:text-sm text-slate-400">Report adverse effects or inquire about opioid stewardship compliance.</p>
       </div>
-      <a href="report.html" class="bg-rose-600 hover:bg-rose-500 px-4 py-2 rounded-lg font-bold text-sm transition">Report Side Effect</a>
+      <a href="report.html" class="bg-rose-600 hover:bg-rose-500 px-6 py-3 rounded-xl font-bold text-sm transition shadow whitespace-nowrap">Report Side Effect →</a>
     </div>
 
   </main>
 
-  <footer class="bg-slate-950 text-slate-500 py-6 text-center text-xs">
+  <footer class="bg-slate-950 text-slate-500 py-6 text-center text-xs border-t border-slate-800">
     © 2026 DIAMOND Pharmaceuticals. MedicateSafely™ Educational Portal.
   </footer>
 </body>
