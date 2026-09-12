@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIAMOND Pharma | MedicateSafely Patient Portal</title>
+  <title>DIAMOND Pharma | MedicateSafely Patient Portal & Computron Pro</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans scroll-smooth">
@@ -20,7 +20,7 @@
         
         <!-- DIAMOND COMPUTRON BUTTON -->
         <a href="#computron" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5 shadow-sm border border-cyan-400/30">
-          <span>🤖</span> Diamond Computron
+          <span>🤖</span> Diamond Computron Pro
         </a>
 
         <a href="medicatesafely/otc.html" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5">
@@ -30,7 +30,7 @@
           <span>✨</span> Diamond Solace™
         </a>
         <a href="medicatesafely/report.html" class="hover:text-cyan-400 transition hidden md:inline">Report Side Effect</a>
-        <!-- REPLACED HCP PORTAL WITH CAREERS BUTTON -->
+        <!-- CAREERS BUTTON -->
         <a href="medicatesafely/careers.html" class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 hover:bg-cyan-500/30 px-3 py-1.5 rounded-lg transition font-bold flex items-center gap-1.5">
           <span>💼</span> Careers
         </a>
@@ -59,7 +59,7 @@
         </div>
         <div class="flex flex-wrap justify-center gap-3">
           <a href="#computron" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold px-5 py-2.5 rounded-lg shadow-lg transition flex items-center gap-2 text-sm border border-cyan-300">
-            <span>🤖</span> Launch Diamond Computron Wizard
+            <span>🤖</span> Launch Diamond Computron Pro Suite
           </a>
           <a href="medicatesafely/otc.html" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-lg shadow-lg transition flex items-center gap-2 text-sm">
             <span>🛒</span> Browse OTC Oral Products
@@ -72,22 +72,24 @@
     </div>
   </section>
 
-  <!-- DIAMOND COMPUTRON - SYMPTOM & PRODUCT WIZARD SECTION -->
-  <section id="computron" class="max-w-5xl mx-auto px-4 py-12 scroll-mt-20">
-    <div class="bg-slate-900 rounded-2xl shadow-2xl border-2 border-cyan-500/40 overflow-hidden text-white">
+  <!-- DIAMOND COMPUTRON PRO - ADVANCED SYMPTOM & PRODUCT WIZARD SECTION -->
+  <section id="computron" class="max-w-6xl mx-auto px-4 py-12 scroll-mt-20">
+    <div class="bg-slate-900 rounded-2xl shadow-2xl border-2 border-cyan-500/50 overflow-hidden text-white">
       
       <!-- Wizard Header Bar -->
       <div class="bg-slate-950 p-6 border-b border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center space-x-3 text-center sm:text-left">
           <div class="bg-cyan-900/80 text-cyan-400 p-3 rounded-xl border border-cyan-500/50 text-2xl">🤖</div>
           <div>
-            <h2 class="text-2xl font-black text-cyan-400 tracking-wide">DIAMOND COMPUTRON™ 7</h2>
-            <p class="text-xs text-slate-400">Interactive OTC, Therapeutics & Skincare Selector • Version 7.0</p>
+            <h2 class="text-2xl font-black text-cyan-400 tracking-wide">DIAMOND COMPUTRON™ PRO</h2>
+            <p class="text-xs text-slate-400">Comprehensive Clinical Diagnostics, Dosage Calculator & Pharmacotherapy Engine • Version 7.2</p>
           </div>
         </div>
-        <span class="text-xs font-mono bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-full border border-cyan-800">
-          Guided Safety Assessment
-        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono bg-cyan-950 text-cyan-300 px-3 py-1.5 rounded-full border border-cyan-800">
+            Active Expert Mode
+          </span>
+        </div>
       </div>
 
       <div class="p-6 sm:p-8 space-y-8">
@@ -101,12 +103,12 @@
           <div class="h-0.5 bg-slate-800 flex-1 mx-2"></div>
           <div id="prog-step-2" class="flex items-center gap-2 text-slate-500">
             <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-black">2</span>
-            <span>Target</span>
+            <span>Indication</span>
           </div>
           <div class="h-0.5 bg-slate-800 flex-1 mx-2"></div>
           <div id="prog-step-3" class="flex items-center gap-2 text-slate-500">
             <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-black">3</span>
-            <span>Results</span>
+            <span>Clinical Matrix</span>
           </div>
         </div>
 
@@ -114,44 +116,44 @@
         <div id="wizard-step-1" class="space-y-6">
           <div class="text-center space-y-1">
             <h3 class="text-xl font-bold text-slate-100">Step 1: Select Treatment Category</h3>
-            <p class="text-sm text-slate-400">Choose the primary area of focus to narrow down appropriate solutions.</p>
+            <p class="text-sm text-slate-400">Choose the primary therapeutic domain to begin comprehensive clinical assessment.</p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <button onclick="selectCategory('adult')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">👤</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Adult Oral Care</div>
-              <div class="text-xs text-slate-400">Age 12+ years. Analgesics, fever reduction, cold & flu relief.</div>
+              <div class="text-xs text-slate-400">Age 12+. High-performance analgesics, anti-inflammatories, cold & flu matrices.</div>
             </button>
 
             <button onclick="selectCategory('pediatric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">👶</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Pediatric (1–12 Yrs)</div>
-              <div class="text-xs text-slate-400">Children under 12. Alcohol-free & sugar-free oral syrups.</div>
+              <div class="text-xs text-slate-400">Weight-based dosage syrups, alcohol-free formulations, specialized flavor profiles.</div>
             </button>
 
             <button onclick="selectCategory('gastric')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">🛡️</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Sensitive Stomach</div>
-              <div class="text-xs text-slate-400">Buffered formulas for acid reflux or hyperacidity.</div>
+              <div class="text-xs text-slate-400">Gastro-protected and magnesium-buffered formulations for acid-sensitive patients.</div>
             </button>
             
             <button onclick="selectCategory('skincare')" class="patient-btn p-5 rounded-xl border-2 border-slate-700 bg-slate-800/60 hover:border-cyan-400 hover:bg-slate-800 transition text-left space-y-2 group">
               <div class="text-3xl">✨</div>
               <div class="font-bold text-slate-200 group-hover:text-cyan-400">Dermatology & Skin</div>
-              <div class="text-xs text-slate-400">Diamond Solace, clinical topicals, barriers, and UV defense.</div>
+              <div class="text-xs text-slate-400">Diamond Solace barrier creams, clinical topicals, retinoids, and photoprotection.</div>
             </button>
           </div>
         </div>
 
-        <!-- WIZARD STEP 2: Secondary Focus -->
+        <!-- WIZARD STEP 2: Secondary Focus / Indication -->
         <div id="wizard-step-2" class="space-y-6 hidden">
           <div class="text-center space-y-1">
-            <h3 class="text-xl font-bold text-slate-100">Step 2: Define your target need</h3>
-            <p class="text-sm text-slate-400">Select all relevant indications.</p>
+            <h3 class="text-xl font-bold text-slate-100">Step 2: Define Specific Indication</h3>
+            <p class="text-sm text-slate-400">Select the precise symptom or clinical requirement to generate the matching protocol.</p>
           </div>
 
-          <!-- Dynamic Options based on Step 1 will be loaded here via JS -->
+          <!-- Dynamic Options loaded via JS -->
           <div id="step-2-options" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <!-- Populated by JS -->
           </div>
@@ -161,32 +163,35 @@
           </div>
         </div>
 
-        <!-- WIZARD RESULTS DISPLAY -->
+        <!-- WIZARD RESULTS DISPLAY (REBUILT FOR MAXIMUM DEPTH) -->
         <div id="wizard-results" class="space-y-6 hidden">
           <div class="bg-cyan-950/60 border-2 border-cyan-500 rounded-xl p-6 text-slate-200 space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-cyan-800/80 pb-4">
               <div>
-                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Computron Diagnostic Recommendation</span>
-                <h3 id="res-title" class="text-2xl font-black text-white">Recommended Products</h3>
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Computron Clinical Intelligence Matrix</span>
+                <h3 id="res-title" class="text-2xl font-black text-white">Recommended Clinical Protocols</h3>
               </div>
               <button onclick="resetWizard()" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs px-3 py-1.5 rounded-lg border border-cyan-700 transition">
                 🔄 Start Over
               </button>
             </div>
 
-            <!-- Product Suggestion Cards Grid -->
-            <div id="res-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- Dynamically Populated by JS -->
+            <!-- Deep Product & Pharmacology Cards Grid -->
+            <div id="res-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Dynamically Populated by JS with rich deep pharmacology -->
             </div>
 
-            <!-- Safety Note Box -->
-            <div class="bg-slate-900/90 p-4 rounded-lg border border-amber-500/40 space-y-1 text-xs text-slate-300 mt-6">
-              <p class="font-bold text-amber-400 flex items-center gap-1.5">
-                <span>⚠️</span> Computron Safety Notice:
-              </p>
-              <p id="res-safety-text">
-                Always ensure you do not exceed recommended dosages. Read instructions carefully before administration or application. Consult a healthcare provider for persistent conditions.
-              </p>
+            <!-- Comprehensive Clinical Safety & Dosing Box -->
+            <div class="bg-slate-900/95 p-6 rounded-xl border border-cyan-500/60 space-y-4 text-xs text-slate-300 mt-6 shadow-inner">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <p class="font-extrabold text-cyan-400 text-sm flex items-center gap-2">
+                  <span>🔬</span> Computron Pharmacovigilance & Safety Audit:
+                </p>
+                <span class="text-[10px] bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded border border-cyan-800 font-mono">Verified Clinical Guidelines</span>
+              </div>
+              <div id="res-safety-text" class="space-y-2 text-slate-200 text-sm leading-relaxed">
+                <!-- Populated dynamically with rich clinical breakdown -->
+              </div>
             </div>
           </div>
         </div>
@@ -227,7 +232,7 @@
         <span class="bg-emerald-950 text-emerald-300 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Over-The-Counter Therapeutics</span>
         <h3 class="text-2xl font-extrabold">OTC Oral Analgesics & Syrups</h3>
         <p class="text-emerald-100 text-sm">
-          From fast-acting analgetics like Diamol ULTRA to pediatric syrups with specialty flavors including Root Beer & Wild Berry.
+          From fast-acting analgesics like Diamol ULTRA to pediatric syrups with specialty flavors including Root Beer & Wild Berry.
         </p>
       </div>
       <div>
@@ -427,49 +432,206 @@
     <p class="text-xs text-slate-500 mt-2">Information provided on this site is for educational support and does not replace direct professional advice from your physician or pharmacist.</p>
   </footer>
 
-  <!-- DIAMOND COMPUTRON ENGINE SCRIPT (COMPUTRON 7) -->
+  <!-- DIAMOND COMPUTRON PRO ENGINE SCRIPT (VERSION 7.2) -->
   <script>
     let wizardState = {
       category: null,
       target: null
     };
 
-    // The Computron 7 Database ensuring ALL products from screenshots are loaded and available
+    // The Computron Pro Database with deep pharmacological specs, contraindications, and dosing profiles
     const productDatabase = [
-      // From image_54d50a.png
-      { category: "adult", target: "fever", tag: "Standard Analgesic", name: "Diamol® Standard", price: "RM 9.50", desc: "500 mg Paracetamol Tablets (Pack of 20). Essential non-aspirin antipyretic and analgesic for effective relief of mild-to-moderate headaches, toothaches, muscle discomfort, and fever." },
-      { category: "adult", target: "fever", tag: "Enhanced Pain Relief", name: "Diamol® Plus", price: "RM 14.20", desc: "500 mg Paracetamol + 65 mg Caffeine (Pack of 20). Formulated with caffeine to amplify paracetamol's analgesic effect by up to 30%. Specially targeted for stubborn tension headaches." },
-      { category: "adult", target: "pain", tag: "Extended Release", name: "Diamol® Pro", price: "RM 18.80", desc: "665 mg Paracetamol Dual-Layer SR Tablets (Pack of 18). Sustained-release bi-layer matrix delivering an immediate therapeutic dose combined with prolonged release." },
-      
-      // From image_54d52a.png
-      { category: "adult", target: "fever", tag: "Rapid Caplets", name: "Diamol® ULTRA", price: "RM 22.50", desc: "500 mg Paracetamol soluble Opti-Tech (Pack of 20). Utilizes Opti-Tech disintegration technology to dissolve 5 times faster than ordinary paracetamol tablets." },
-      { category: "adult", target: "immunity", tag: "Vitamin C + Zinc", name: "Diascorbion® Effervescent", price: "RM 28.00", desc: "1000 mg Ascorbic Acid + 10 mg Zinc (Tube of 15 Tablets). High-strength, fast-absorbing effervescent Vitamin C and elemental zinc defense formula." },
-      { category: "adult", target: "cough", tag: "Respiratory Mucolytic", name: "Diacytene® Effervescent", price: "RM 24.50", desc: "600 mg Acetylcysteine Effervescent Tablets (Pack of 10). Potent mucolytic formulation that breaks down disulfide bonds in thick respiratory mucus." },
-      { category: "adult", target: "pain", tag: "Dual Anti-Inflammatory", name: "Diarapimol®", price: "RM 16.50", desc: "500 mg Paracetamol + 200 mg Ibuprofen (Pack of 12). Combines central analgesic paracetamol with anti-inflammatory ibuprofen in a single tablet." },
-      { category: "adult", target: "fever", tag: "Cold & Flu Formula", name: "Daxtramol®", price: "RM 15.00", desc: "Paracetamol 500 mg + Phenylephrine 10 mg + Vitamin C (Pack of 16). Multi-symptom cold and flu relief. Reduces fever, alleviates sinus pressure." },
-      { category: "adult", target: "night", tag: "Nighttime Relief", name: "Diphamol®", price: "RM 13.80", desc: "Paracetamol 500 mg + Diphenhydramine 25 mg (Pack of 16 Caplets). Specially designed nighttime analgesic to help you fall asleep when pain or cold symptoms keep you awake." },
-      
-      // From image_54d547.png
-      { category: "pediatric", target: "all", tag: "Pediatric & Junior Liquid", name: "Diapaemol® Oral Syrup", price: "RM 12.50", desc: "120 mg / 5 mL Paracetamol Suspension (120 mL). Fast, gentle fever reduction. Flavors: Midnight Mint, Honey Lemon Soothe, Ginger, Root Beer Fizz, Wild Berry Blast, Tropical Twist." },
-      
-      // From image_54d564.png
-      { category: "gastric", target: "all", tag: "Gastro-Protected", name: "Dipamavol®", price: "RM 11.20", desc: "500 mg Paracetamol + 100 mg Magnesium Hydroxide (Pack of 18). Buffered analgesic integrated with antacid compounds. Formulated specifically for sensitive gastric linings." },
-      
-      // From image_54d582.png
-      { category: "skincare", target: "care", tag: "Barrier Repair", name: "Diamond Solace Moisturiser", price: "RM 48.00", desc: "150 mL Cream • Ceramides, Hyaluronic Acid & Niacinamide. Rich, non-comedogenic moisture cream that restores the natural epidermal lipid barrier." },
-      { category: "skincare", target: "care", tag: "Resurfacing Complex", name: "Diamond Radiant Serum", price: "RM 68.00", desc: "30 mL Dropper • 2% BHA + Vit C + Niacinamide + AHA. All-in-one clarifying serum that evens out skin tone and restores natural radiance." },
-      { category: "skincare", target: "cleanse", tag: "Sensitive Skin", name: "Diamond Solace Gentle Cleanser", price: "RM 38.50", desc: "250 mL Bottle • Soap-Free & Fragrance-Free Lotion. Ultra-mild, non-foaming facial cleanser for hypersensitive or eczema-prone skin." },
-      { category: "skincare", target: "cleanse", tag: "Daily Hydrating Gel", name: "Diamond Solace All-Day Cleanser", price: "RM 42.00", desc: "200 mL Pump • pH 5.5 Hydrating Gel Cleanser. Balanced daily foaming gel wash designed for normal to dry skin." },
-      { category: "skincare", target: "cleanse", tag: "Exfoliating & Pore Care", name: "Diamond Solace Deep Cleanser", price: "RM 46.00", desc: "150 mL Tube • 2% Salicylic Acid (BHA) + Zinc PCA. Targeted purifying cleanser formulated to dissolve dead skin build-up and prevent blackheads." },
-      { category: "skincare", target: "protect", tag: "Broad Spectrum UV", name: "Diamond Solace SPF 45 Sunscreen + Moisturiser", price: "RM 55.00", desc: "60 mL Tube • Broad Spectrum UVA/UVB + Vitamin E. Lightweight 2-in-1 daily hydration lotion providing protection against photoaging." },
-      
-      // From image_54d5a2.png
-      { category: "skincare", target: "protect", tag: "Antioxidant Supplement", name: "Diamond Solace Heliocare X", price: "RM 168.00", desc: "60 Capsules • Fernblock® Extract 240mg + Green Tea. Oral photoprotective supplement. Defends skin cells against systemic UV damage." },
-      { category: "skincare", target: "treatment", tag: "Acne Spot Treatment", name: "Dibenzoyl® Gel", price: "RM 24.50", desc: "Benzoyl Peroxide 5% w/w • 30g Tube. Fast-acting antimicrobial gel that targets Cutibacterium acnes bacteria directly inside clogged pores." },
-      { category: "skincare", target: "treatment", tag: "Topical Antiviral", name: "Dilovirax® T Cream", price: "RM 21.00", desc: "Aciclovir 5% w/w • 5g Tube. Targeted antiviral cream for the early treatment of recurrent herpes labialis (cold sores) on the lips and face." },
-      { category: "skincare", target: "rx", tag: "Prescription Only", name: "Diamond Itch-Buster® Lipocream", price: "RX Required", desc: "Hydrocortisone Aceponate 0.127% w/w • 30g Tube. Potent Class II topical corticosteroid lipocream designed for acute flare-ups of severe eczema." },
-      { category: "skincare", target: "rx", tag: "Prescription Antibiotic", name: "Difucid® Cream", price: "RX Required", desc: "Fusidic Acid 2% w/w • 30g Tube. Topical antibacterial cream effective against primary and secondary skin infections." },
-      { category: "skincare", target: "rx", tag: "Prescription Retinoid", name: "Diadapalene® Gel", price: "RX Required", desc: "Adapalene 0.1% w/w • 30g Tube. Third-generation topical retinoid gel for the treatment of acne vulgaris." }
+      // Adult Fever & Analgesics
+      { 
+        category: "adult", target: "fever", tag: "Standard Analgesic", name: "Diamol® Standard", price: "RM 9.50", 
+        desc: "500 mg Paracetamol Tablets (Pack of 20). Essential non-aspirin antipyretic and analgesic for effective relief of mild-to-moderate headaches, toothaches, muscle discomfort, and fever.",
+        activeIng: "Paracetamol (Acetaminophen) 500 mg per tablet",
+        dosing: "Adults and adolescents over 12 years: 1 to 2 tablets (500mg - 1000mg) every 4 to 6 hours as needed. Maximum 8 tablets (4000 mg) in any 24-hour period.",
+        pharmacokinetics: "Rapidly absorbed from the gastrointestinal tract with peak plasma concentrations achieved in 30 to 60 minutes. Hepatic metabolism via glucuronide and sulfate conjugation.",
+        contraindications: "Severe hepatic impairment, known hypersensitivity to paracetamol, or chronic alcoholism."
+      },
+      { 
+        category: "adult", target: "fever", tag: "Enhanced Pain Relief", name: "Diamol® Plus", price: "RM 14.20", 
+        desc: "500 mg Paracetamol + 65 mg Caffeine (Pack of 20). Formulated with caffeine to amplify paracetamol's analgesic effect by up to 30%. Specially targeted for stubborn tension headaches.",
+        activeIng: "Paracetamol 500 mg + Anhydrous Caffeine 65 mg per caplet",
+        dosing: "Adults: 2 caplets every 6 hours as required. Do not exceed 8 caplets in 24 hours.",
+        pharmacokinetics: "Caffeine acts as an adjuvant by constricting cerebral blood vessels and enhancing central nervous system absorption of analgesics.",
+        contraindications: "Avoid concurrent intake of excessive caffeinated beverages (coffee, tea, energy drinks) to prevent jitteriness, insomnia, and tachycardia."
+      },
+      { 
+        category: "adult", target: "pain", tag: "Extended Release", name: "Diamol® Pro", price: "RM 18.80", 
+        desc: "665 mg Paracetamol Dual-Layer SR Tablets (Pack of 18). Sustained-release bi-layer matrix delivering an immediate therapeutic dose combined with prolonged release.",
+        activeIng: "Paracetamol 665 mg (Bi-layer sustained release)",
+        dosing: "Adults: 2 tablets swallowed whole every 8 hours. Do not crush, chew, or divide tablets. Maximum 6 tablets in 24 hours.",
+        pharmacokinetics: "Initial immediate-release layer provides fast analgesia, while the matrix erosion layer sustains therapeutic plasma levels over an 8-hour window.",
+        contraindications: "Not recommended for children under 12 years. Caution in patients with impaired renal or hepatic function."
+      },
+      { 
+        category: "adult", target: "fever", tag: "Rapid Caplets", name: "Diamol® ULTRA", price: "RM 22.50", 
+        desc: "500 mg Paracetamol soluble Opti-Tech (Pack of 20). Utilizes Opti-Tech disintegration technology to dissolve 5 times faster than ordinary paracetamol tablets.",
+        activeIng: "Paracetamol 500 mg with Opti-Tech Sodium Bicarbonate Disintegrant",
+        dosing: "Adults: 1-2 caplets dissolved in water or swallowed whole every 4-6 hours. Max 4000mg daily.",
+        pharmacokinetics: "Advanced effervescent/disintegrant matrix accelerates gastric emptying and intestinal absorption for faster onset of pain relief.",
+        contraindications: "Contains sodium; patients on strict controlled sodium diets should consult a physician."
+      },
+      { 
+        category: "adult", target: "immunity", tag: "Vitamin C + Zinc", name: "Diascorbion® Effervescent", price: "RM 28.00", 
+        desc: "1000 mg Ascorbic Acid + 10 mg Zinc (Tube of 15 Tablets). High-strength, fast-absorbing effervescent Vitamin C and elemental zinc defense formula.",
+        activeIng: "Ascorbic Acid (Vitamin C) 1000 mg + Zinc Citrate 10 mg",
+        dosing: "Dissolve 1 tablet daily in a glass of water (200 mL) preferably with breakfast.",
+        pharmacokinetics: "Vitamin C acts as a powerful water-soluble antioxidant and enzymatic cofactor, synergizing with zinc to support immune cell proliferation and epithelial barrier integrity.",
+        contraindications: "High doses may cause gastrointestinal discomfort in sensitive individuals. Caution in patients with history of renal calculi (kidney stones)."
+      },
+      { 
+        category: "adult", target: "cough", tag: "Respiratory Mucolytic", name: "Diacytene® Effervescent", price: "RM 24.50", 
+        desc: "600 mg Acetylcysteine Effervescent Tablets (Pack of 10). Potent mucolytic formulation that breaks down disulfide bonds in thick respiratory mucus.",
+        activeIng: "Acetylcysteine 600 mg",
+        dosing: "Adults: 1 tablet daily dissolved in half a glass of water. Ensure high daily fluid intake to assist mucus clearance.",
+        pharmacokinetics: "Free sulfhydryl group opens disulfide bonds in mucoproteins, lowering mucus viscosity and facilitating expectoration.",
+        contraindications: "Caution in active peptic ulcer disease. Asthmatic patients should use under medical supervision due to potential bronchospasm."
+      },
+      { 
+        category: "adult", target: "pain", tag: "Dual Anti-Inflammatory", name: "Diarapimol®", price: "RM 16.50", 
+        desc: "500 mg Paracetamol + 200 mg Ibuprofen (Pack of 12). Combines central analgesic paracetamol with anti-inflammatory ibuprofen in a single tablet.",
+        activeIng: "Paracetamol 500 mg + Ibuprofen 200 mg",
+        dosing: "Adults: 1 tablet up to 3 times daily with food. Interval of at least 6 hours between doses. Max 6 tablets daily.",
+        pharmacokinetics: "Dual mechanisms: Paracetamol acts centrally in the CNS, while ibuprofen inhibits peripheral cyclooxygenase (COX-1/COX-2) enzymes to suppress prostaglandin synthesis.",
+        contraindications: "Active GI bleeding, history of NSAID-induced ulcers, severe heart failure, or concurrent anticoagulant therapy."
+      },
+      { 
+        category: "adult", target: "fever", tag: "Cold & Flu Formula", name: "Daxtramol®", price: "RM 15.00", 
+        desc: "Paracetamol 500 mg + Phenylephrine 10 mg + Vitamin C (Pack of 16). Multi-symptom cold and flu relief. Reduces fever, alleviates sinus pressure.",
+        activeIng: "Paracetamol 500 mg + Phenylephrine HCl 10 mg + Ascorbic Acid 30 mg",
+        dosing: "Adults: 1-2 caplets every 4-6 hours. Maximum 8 caplets in 24 hours.",
+        pharmacokinetics: "Phenylephrine acts as a selective alpha-1 adrenergic agonist to vasoconstrict nasal mucosa and relieve congestion.",
+        contraindications: "Severe hypertension, cardiovascular disease, hyperthyroidism, or concurrent MAOI antidepressant use."
+      },
+      { 
+        category: "adult", target: "night", tag: "Nighttime Relief", name: "Diphamol®", price: "RM 13.80", 
+        desc: "Paracetamol 500 mg + Diphenhydramine 25 mg (Pack of 16 Caplets). Specially designed nighttime analgesic to help you fall asleep when pain or cold symptoms keep you awake.",
+        activeIng: "Paracetamol 500 mg + Diphenhydramine HCl 25 mg",
+        dosing: "Adults and children over 12: 2 caplets at bedtime only. Do not take during the day.",
+        pharmacokinetics: "Diphenhydramine is a first-generation antihistamine with potent central sedative properties crossing the blood-brain barrier.",
+        contraindications: "Causes marked drowsiness. Do not drive or operate machinery. Avoid alcohol entirely. Contraindicated in angle-closure glaucoma or urinary retention."
+      },
+
+      // Pediatric
+      { 
+        category: "pediatric", target: "all", tag: "Pediatric & Junior Liquid", name: "Diapaemol® Oral Syrup", price: "RM 12.50", 
+        desc: "120 mg / 5 mL Paracetamol Suspension (120 mL). Fast, gentle fever reduction. Flavors: Midnight Mint, Honey Lemon Soothe, Ginger, Root Beer Fizz, Wild Berry Blast, Tropical Twist.",
+        activeIng: "Paracetamol 120 mg per 5 mL suspension",
+        dosing: "Children 1-5 years: 5-10 mL. Children 6-12 years: 10-20 mL. Administer every 4-6 hours as needed. Max 4 doses in 24 hours.",
+        pharmacokinetics: "Pediatric oral suspension formulated for rapid absorption across the GI tract with high palatability across 6 specialty flavor profiles.",
+        contraindications: "Do not administer to infants under 1 month without direct pediatric guidance. Ensure correct use of provided dosing syringe."
+      },
+
+      // Sensitive Stomach / Gastric
+      { 
+        category: "gastric", target: "all", tag: "Gastro-Protected", name: "Dipamavol®", price: "RM 11.20", 
+        desc: "500 mg Paracetamol + 100 mg Magnesium Hydroxide (Pack of 18). Buffered analgesic integrated with antacid compounds. Formulated specifically for sensitive gastric linings.",
+        activeIng: "Paracetamol 500 mg + Magnesium Hydroxide 100 mg",
+        dosing: "Adults: 1-2 tablets swallowed with water every 4-6 hours. Maximum 8 tablets daily.",
+        pharmacokinetics: "Magnesium hydroxide neutralizes gastric acidity locally and buffers the tablet matrix, reducing direct mucosal irritation in gastritis-prone patients.",
+        contraindications: "Severe renal impairment due to risk of magnesium accumulation and hypermagnesemia."
+      },
+
+      // Dermatology & Solace Skincare
+      { 
+        category: "skincare", target: "care", tag: "Barrier Repair", name: "Diamond Solace Moisturiser", price: "RM 48.00", 
+        desc: "150 mL Cream • Ceramides, Hyaluronic Acid & Niacinamide. Rich, non-comedogenic moisture cream that restores the natural epidermal lipid barrier.",
+        activeIng: "Ceramide NP, Ceramide AP, Hyaluronic Acid 1%, Niacinamide 4%",
+        dosing: "Apply generously to clean skin twice daily or as needed to dry, compromised areas.",
+        pharmacokinetics: "Replenishes intercellular lipids (ceramides) while hyaluronic acid draws moisture into the stratum corneum and niacinamide calms inflammatory cytokines.",
+        contraindications: "For external use only. Avoid direct contact with eyes."
+      },
+      { 
+        category: "skincare", target: "care", tag: "Resurfacing Complex", name: "Diamond Radiant Serum", price: "RM 68.00", 
+        desc: "30 mL Dropper • 2% BHA + Vit C + Niacinamide + AHA. All-in-one clarifying serum that evens out skin tone and restores natural radiance.",
+        activeIng: "Salicylic Acid 2% + Lactic Acid 3% + Vitamin C 10% + Niacinamide 5%",
+        dosing: "Apply 3-4 drops to clean face at night, 2-3 times weekly initially, increasing to nightly tolerance.",
+        pharmacokinetics: "Exfoliates dead surface corneocytes via AHAs/BHAs while Vitamin C inhibits tyrosinase activity to fade hyperpigmentation.",
+        contraindications: "Sun sensitivity warning: Always use broad-spectrum SPF 30+ during daytime use."
+      },
+      { 
+        category: "skincare", target: "cleanse", tag: "Sensitive Skin", name: "Diamond Solace Gentle Cleanser", price: "RM 38.50", 
+        desc: "250 mL Bottle • Soap-Free & Fragrance-Free Lotion. Ultra-mild, non-foaming facial cleanser for hypersensitive or eczema-prone skin.",
+        activeIng: "Glycerin, Panthenol (Pro-Vitamin B5), Cetyl Alcohol",
+        dosing: "Massage gently onto wet or dry skin, then wipe off or rinse lightly with lukewarm water.",
+        pharmacokinetics: "Non-stripping emulsion cleanses impurities without disrupting natural sebum or provoking rosacea and eczema flare-ups.",
+        contraindications: "Hypersensitivity to any emollient constituent."
+      },
+      { 
+        category: "skincare", target: "cleanse", tag: "Daily Hydrating Gel", name: "Diamond Solace All-Day Cleanser", price: "RM 42.00", 
+        desc: "200 mL Pump • pH 5.5 Hydrating Gel Cleanser. Balanced daily foaming gel wash designed for normal to dry skin.",
+        activeIng: "Amino Acid Surfactants, Sodium Hyaluronate, Aloe Vera Extract",
+        dosing: "Lather with water, massage over face, and rinse thoroughly morning and evening.",
+        pharmacokinetics: "Maintains optimal skin acid mantle (pH 5.5) to prevent microbial proliferation while retaining skin hydration.",
+        contraindications: "External use only."
+      },
+      { 
+        category: "skincare", target: "cleanse", tag: "Exfoliating & Pore Care", name: "Diamond Solace Deep Cleanser", price: "RM 46.00", 
+        desc: "150 mL Tube • 2% Salicylic Acid (BHA) + Zinc PCA. Targeted purifying cleanser formulated to dissolve dead skin build-up and prevent blackheads.",
+        activeIng: "Salicylic Acid 2% w/v + Zinc PCA 1% + Tea Tree Extract",
+        dosing: "Massage onto damp skin for 30-60 seconds, paying attention to T-zone and blemish-prone areas, then rinse thoroughly.",
+        pharmacokinetics: "Lipophilic BHA penetrates sebum-filled follicles to dissolve comedones and normalize cellular shedding inside pore linings.",
+        contraindications: "Avoid eye area. Do not use concurrently with other harsh chemical exfoliants without dermatological advice."
+      },
+      { 
+        category: "skincare", target: "protect", tag: "Broad Spectrum UV", name: "Diamond Solace SPF 45 Sunscreen + Moisturiser", price: "RM 55.00", 
+        desc: "60 mL Tube • Broad Spectrum UVA/UVB + Vitamin E. Lightweight 2-in-1 daily hydration lotion providing protection against photoaging.",
+        activeIng: "Avobenzone, Octisalate, Homosalate, Tocopheryl Acetate (Vitamin E)",
+        dosing: "Apply liberally 15 minutes before sun exposure. Reapply at least every 2 hours or after 40 minutes of swimming or sweating.",
+        pharmacokinetics: "Forms a uniform UV-absorptive protective film across epidermal layers, mitigating free radical generation and photo-induced collagen degradation.",
+        contraindications: "Discontinue if skin irritation or rash develops."
+      },
+      { 
+        category: "skincare", target: "protect", tag: "Antioxidant Supplement", name: "Diamond Solace Heliocare X", price: "RM 168.00", 
+        desc: "60 Capsules • Fernblock® Extract 240mg + Green Tea. Oral photoprotective supplement. Defends skin cells against systemic UV damage.",
+        activeIng: "Polypodium leucotomos (Fernblock®) 240 mg + Green Tea Catechins",
+        dosing: "Take 1 capsule daily in the morning before sun exposure. Take an additional capsule if prolonged intense outdoor exposure is expected.",
+        pharmacokinetics: "Provides systemic antioxidant protection that neutralizes free radicals across all skin areas, including areas topical sunscreen cannot reach.",
+        contraindications: "Not a replacement for topical sunscreens. Consult physician if pregnant or nursing."
+      },
+      { 
+        category: "skincare", target: "treatment", tag: "Acne Spot Treatment", name: "Dibenzoyl® Gel", price: "RM 24.50", 
+        desc: "Benzoyl Peroxide 5% w/w • 30g Tube. Fast-acting antimicrobial gel that targets Cutibacterium acnes bacteria directly inside clogged pores.",
+        activeIng: "Benzoyl Peroxide 5% w/w",
+        dosing: "Clean skin thoroughly before applying. Cover the affected area with a thin layer once daily, increasing to twice daily if needed.",
+        pharmacokinetics: "Releases active oxygen species into the follicle, oxidizing bacterial proteins and effectively reducing C. acnes population.",
+        contraindications: "May bleach hair and colored fabrics. Avoid contact with eyes, lips, and mucous membranes."
+      },
+      { 
+        category: "skincare", target: "treatment", tag: "Topical Antiviral", name: "Dilovirax® T Cream", price: "RM 21.00", 
+        desc: "Aciclovir 5% w/w • 5g Tube. Targeted antiviral cream for the early treatment of recurrent herpes labialis (cold sores) on the lips and face.",
+        activeIng: "Aciclovir 5% w/w",
+        dosing: "Apply to lesions 5 times daily for 5 days (approximately every 4 hours while awake). Start treatment at the earliest sign of an outbreak (prodromal tingling).",
+        pharmacokinetics: "Selectively phosphorylated by herpes simplex virus thymidine kinase, inhibiting viral DNA polymerase and halting replication.",
+        contraindications: "For cutaneous use on lips and face only. Do not apply to mucous membranes such as the inside of the mouth or eyes."
+      },
+      { 
+        category: "skincare", target: "rx", tag: "Prescription Only", name: "Diamond Itch-Buster® Lipocream", price: "RX Required", 
+        desc: "Hydrocortisone Aceponate 0.127% w/w • 30g Tube. Potent Class II topical corticosteroid lipocream designed for acute flare-ups of severe eczema.",
+        activeIng: "Hydrocortisone Aceponate 0.127% w/w",
+        dosing: "Apply a thin layer to affected skin once daily as prescribed by your physician. Limit continuous facial use.",
+        pharmacokinetics: "Lipophilic ester formulation penetrates rapidly into epidermal cells, binding glucocorticoid receptors to suppress inflammatory mediator cascades.",
+        contraindications: "Untreated bacterial, fungal, or viral skin infections; rosacea; perioral dermatitis. Requires medical prescription."
+      },
+      { 
+        category: "skincare", target: "rx", tag: "Prescription Antibiotic", name: "Difucid® Cream", price: "RX Required", 
+        desc: "Fusidic Acid 2% w/w • 30g Tube. Topical antibacterial cream effective against primary and secondary skin infections.",
+        activeIng: "Fusidic Acid 2% w/w (as sodium fusidate)",
+        dosing: "Apply gently to the affected area 3 times daily for 7 days, or as directed by your physician.",
+        pharmacokinetics: "Inhibits bacterial protein synthesis by preventing translocation of elongation factor G from ribosome complexes.",
+        contraindications: "Known hypersensitivity to fusidic acid. Requires valid medical prescription."
+      },
+      { 
+        category: "skincare", target: "rx", tag: "Prescription Retinoid", name: "Diadapalene® Gel", price: "RX Required", 
+        desc: "Adapalene 0.1% w/w • 30g Tube. Third-generation topical retinoid gel for the treatment of acne vulgaris.",
+        activeIng: "Adapalene 0.1% w/w",
+        dosing: "Apply a thin film once daily at night to clean, dry skin over the entire acne-affected area.",
+        pharmacokinetics: "Modulates cellular differentiation, keratinization, and inflammatory processes by interacting with specific retinoic acid nuclear receptors.",
+        contraindications: "Pregnancy or planning pregnancy. Sunburn or eczema-compromised skin. Requires medical prescription."
+      }
     ];
 
     function updateProgress(step) {
@@ -569,39 +731,70 @@
       const safetyText = document.getElementById('res-safety-text');
       container.innerHTML = '';
 
-      // Determine matched products
+      // Filter products
       let results = productDatabase.filter(p => p.category === wizardState.category);
       if (wizardState.target !== 'all') {
         results = results.filter(p => p.target === wizardState.target);
       }
 
-      // Update titles and safety notes based on category
+      // Dynamic titles and rich clinical text
       if (wizardState.category === 'pediatric') {
-        title.innerText = "Computron Recommendation: Pediatric Liquid Care";
-        safetyText.innerText = "Always use the calibrated dosage syringe included with Diapaemol syrup. Calculate dose strictly based on child weight or age. Do not exceed 4 doses in 24 hours.";
+        title.innerText = "Computron Protocol: Pediatric Liquid Care & Safety Matrix";
+        safetyText.innerHTML = `
+          <p><strong>Pediatric Administration Rule:</strong> Always utilize the graduated oral dosing syringe provided in the package. Never use standard kitchen spoons.</p>
+          <p><strong>Weight-Based Dosing Calculation:</strong> Calculate doses strictly at 10–15 mg/kg per dose, administered no more than every 4 to 6 hours. Maximum 4 doses per 24 hours.</p>
+          <p><strong>Flavor Compliance:</strong> Diapaemol syrup is formulated across 6 palatability profiles (Midnight Mint, Honey Lemon Soothe, Ginger, Root Beer Fizz, Wild Berry Blast, Tropical Twist) to ensure full regimen completion in children.</p>
+        `;
       } else if (wizardState.category === 'gastric') {
-        title.innerText = "Computron Recommendation: Gastro-Protected Care";
-        safetyText.innerText = "While buffered, it is still advisable to chew or swallow these tablets with a full glass of water. Wait 2 hours before taking other medications.";
+        title.innerText = "Computron Protocol: Gastro-Protected Antacid-Analgesic Matrix";
+        safetyText.innerHTML = `
+          <p><strong>Gastric Protection Profile:</strong> Dipamavol combines paracetamol with magnesium hydroxide to neutralize gastric acid secretion and buffer the tablet matrix.</p>
+          <p><strong>Administration Directive:</strong> Swallow with a full 250 mL glass of water. Recommended for patients with documented NSAID or analgesic-induced dyspepsia.</p>
+          <p><strong>Precautions:</strong> Separate from oral iron supplements or tetracycline antibiotics by at least 2 hours to avoid chelation and reduced absorption.</p>
+        `;
       } else if (wizardState.category === 'skincare') {
-        title.innerText = "Computron Recommendation: Dermatological Line";
-        safetyText.innerText = "For external use only. Clinical med-topicals marked (Rx) require a physician's prescription. Perform a patch test prior to using new serums or retinoids.";
+        title.innerText = "Computron Protocol: Diamond Solace™ Dermatological & Clinical Matrix";
+        safetyText.innerHTML = `
+          <p><strong>Topical Safety & Patch Testing:</strong> Perform a 24-hour inner arm patch test prior to applying active retinoids (Diadapalene), BHA serums, or spot gels.</p>
+          <p><strong>Prescription Regulation:</strong> Items designated with <strong>(Rx)</strong> (including Difucid, Itch-Buster, and Diadapalene) require a verified physician's prescription prior to dispensing.</p>
+          <p><strong>Photoprotection Directive:</strong> Active exfoliating acids and retinoids increase UV vulnerability. Daily application of Diamond Solace SPF 45 Sunscreen is strictly recommended.</p>
+        `;
       } else {
-        title.innerText = "Computron Recommendation: Target Therapeutics";
-        safetyText.innerText = "Always ensure you do not exceed 4,000 mg of paracetamol within 24 hours across all combined products. Read instructions carefully before administration.";
+        title.innerText = "Computron Protocol: Adult Systemic Analgesia & Antipyretic Matrix";
+        safetyText.innerHTML = `
+          <p><strong>Maximum Daily Limit (MAXD):</strong> Never exceed 4,000 mg (4 grams) of total paracetamol within any 24-hour period across all combined cold, flu, and analgesic products.</p>
+          <p><strong>Hepatotoxicity Warning:</strong> Chronic heavy alcohol consumption significantly increases the risk of paracetamol-induced hepatotoxicity. Avoid alcohol during therapy.</p>
+          <p><strong>Combination Alert:</strong> Do not concurrently ingest Diamol Plus, Diamol Pro, or Daxtramol without reviewing active ingredient overlap.</p>
+        `;
       }
 
-      // Render Cards
+      // Render Rich Cards
       results.forEach(product => {
         const card = document.createElement('div');
-        card.className = "bg-slate-900 p-5 rounded-xl border border-cyan-500/50 space-y-3 flex flex-col justify-between h-full";
+        card.className = "bg-slate-900 p-5 rounded-xl border border-cyan-500/50 space-y-4 flex flex-col justify-between h-full shadow-lg";
         card.innerHTML = `
           <div class="space-y-3">
             <div class="flex justify-between items-start gap-2">
-              <span class="text-xs bg-cyan-900 text-cyan-200 px-2.5 py-0.5 rounded font-bold whitespace-nowrap">${product.tag}</span>
-              <span class="text-lg font-bold text-white whitespace-nowrap">${product.price}</span>
+              <span class="text-xs bg-cyan-900 text-cyan-200 px-2.5 py-1 rounded font-bold whitespace-nowrap">${product.tag}</span>
+              <span class="text-lg font-black text-white whitespace-nowrap">${product.price}</span>
             </div>
-            <h4 class="text-xl font-bold text-cyan-400">${product.name}</h4>
+            <h4 class="text-xl font-black text-cyan-400">${product.name}</h4>
             <p class="text-sm text-slate-300 leading-relaxed">${product.desc}</p>
+            
+            <div class="pt-3 border-t border-slate-800 space-y-2 text-xs">
+              <div class="text-slate-300">
+                <span class="font-bold text-cyan-300">Active Ingredients:</span> ${product.activeIng}
+              </div>
+              <div class="text-slate-300">
+                <span class="font-bold text-cyan-300">Dosing Protocol:</span> ${product.dosing}
+              </div>
+              <div class="text-slate-300">
+                <span class="font-bold text-cyan-300">Pharmacokinetics:</span> ${product.pharmacokinetics}
+              </div>
+              <div class="text-rose-300 bg-rose-950/40 p-2 rounded border border-rose-900/50">
+                <span class="font-bold">Contraindications:</span> ${product.contraindications}
+              </div>
+            </div>
           </div>
         `;
         container.appendChild(card);
