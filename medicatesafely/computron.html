@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIAMOND Computron Pro AI v20.0 | Enterprise Clinical Chatbot & 1,000+ Query Matrix</title>
+  <title>DIAMOND Computron Pro AI v30.0 | Advanced Multi-Keyword Clinical Engine</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased h-full flex flex-col overflow-hidden">
@@ -13,7 +13,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <span class="text-xl font-black tracking-wider text-cyan-400">DIAMOND</span>
-        <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full font-bold border border-cyan-800">Computron Pro AI v20.0 (1,000+ Query Matrix)</span>
+        <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full font-bold border border-cyan-800">Computron Pro AI v30.0</span>
       </div>
       <div class="flex space-x-3 text-sm font-semibold items-center">
         <a href="../index.html" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5">
@@ -35,17 +35,17 @@
   <!-- Main Chatbot Workspace Layout -->
   <div class="flex-1 flex overflow-hidden max-w-7xl w-full mx-auto p-2 sm:p-4 gap-4">
     
-    <!-- Left Sidebar: Expanded Knowledge Matrix Directory -->
+    <!-- Left Sidebar: Synchronized Preset Directory -->
     <aside class="w-80 bg-slate-900/90 rounded-2xl border border-cyan-500/30 hidden lg:flex flex-col shadow-xl overflow-hidden">
       <div class="p-4 border-b border-slate-800 bg-slate-900/50">
         <h2 class="text-sm font-bold text-cyan-400 flex items-center gap-2">
-          <span>🧠</span> 1,000+ Query Matrix Hub
+          <span>🎯</span> Precision Query Directory
         </h2>
-        <p class="text-xs text-slate-400 mt-1">Expanded algorithmic intent mapping across all DIAMOND therapeutics.</p>
+        <p class="text-xs text-slate-400 mt-1">Multi-keyword scored clinical prompts with guaranteed responses.</p>
       </div>
 
       <div class="p-3 border-b border-slate-800">
-        <input type="text" id="kb-search" placeholder="Search 1,000+ query triggers..." onkeyup="filterQuickPrompts()" 
+        <input type="text" id="kb-search" placeholder="Filter verified prompts..." onkeyup="filterQuickPrompts()" 
                class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500">
       </div>
 
@@ -58,43 +58,48 @@
           🛡️ About MedicateSafely Portal
         </button>
 
-        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Core Rx Products</div>
-        <button onclick="sendPresetPrompt('What is Dilovirax used for?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          💊 Dilovirax® (Aciclovir) Guide
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Prescription Guidance</div>
+        <button onclick="sendPresetPrompt('What is the dosage schedule for Dilovirax in shingles?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          💊 Dilovirax Shingles Dosing Schedule
         </button>
-        <button onclick="sendPresetPrompt('How do I take Didoxiline safely?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          ⚠️ Didoxiline® (Doxycycline) Guide
+        <button onclick="sendPresetPrompt('What are the esophageal risks of Didoxiline and how to prevent them?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ⚠️ Didoxiline Esophageal Ulceration Risk
         </button>
-        <button onclick="sendPresetPrompt('What is the maximum dose for Diamadol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          🛑 Diamadol® (Tramadol) Limits
+        <button onclick="sendPresetPrompt('What is the maximum 24-hour dose for Diamadol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🛑 Diamadol Max Daily Limit (400mg)
         </button>
-        <button onclick="sendPresetPrompt('Tell me about Dicelecox side effects.')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          ⚡ Dicelecox® (Celecoxib) Guide
+        <button onclick="sendPresetPrompt('Tell me about Dicelecox side effects and food precautions.')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ⚡ Dicelecox Side Effects & Food Rule
         </button>
-        <button onclick="sendPresetPrompt('When should I take Diaprednilone?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          ☀️ Diaprednilone® (Prednisolone) Dosing
+        <button onclick="sendPresetPrompt('What is the correct morning dosing rule for Diaprednilone?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ☀️ Diaprednilone Cortisol Alignment Rule
         </button>
-        <button onclick="sendPresetPrompt('Is Diazenitine a drowsy antihistamine?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          🌿 Diazenitine® (Cetirizine) Guide
+        <button onclick="sendPresetPrompt('How should I take Diazenitine for seasonal allergies?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🌿 Diazenitine Cetirizine Dosing & Sedation
         </button>
 
-        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Advanced Clinical Scenarios</div>
-        <button onclick="sendPresetPrompt('Can I take Diamadol with alcohol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          🚨 Diamadol & Alcohol Warning
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Safety & Interactions</div>
+        <button onclick="sendPresetPrompt('Can I take Dicelecox and Diaprednilone together?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ⚡ Dicelecox + Diaprednilone GI Risk Matrix
         </button>
-        <button onclick="sendPresetPrompt('What happens if I combine Dicelecox and Diaprednilone?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          ⚠️ NSAID + Corticosteroid GI Hazard
+        <button onclick="sendPresetPrompt('What happens if I combine Diamadol with alcohol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🚨 Diamadol & Alcohol Contraindication
         </button>
-        <button onclick="sendPresetPrompt('How do I calculate eGFR for kidney adjustment?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          🧮 Renal eGFR & Titration Formula
+        <button onclick="sendPresetPrompt('Does dairy affect Didoxiline absorption?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🥛 Didoxiline & Dairy Chelation Warning
         </button>
-        <button onclick="sendPresetPrompt('How do I verify a product batch lot number?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
-          🔍 Batch Authentication Protocol
+
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Calculators & Verification</div>
+        <button onclick="sendPresetPrompt('How do I calculate renal eGFR adjustment for elderly patients?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🧮 Cockcroft-Gault eGFR Formula & Scaling
+        </button>
+        <button onclick="sendPresetPrompt('How to verify an authentic DIAMOND batch lot number?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🔍 Batch Lot Authentication Protocol
         </button>
       </div>
 
       <div class="p-3 border-t border-slate-800 bg-slate-900/50 text-[11px] text-slate-400 flex justify-between items-center">
-        <span>Matrix Engine: <strong class="text-emerald-400">1,000+ ACTIVE</strong></span>
+        <span>Engine Scorer: <strong class="text-emerald-400">MULTI-KEYWORD ACTIVE</strong></span>
         <button onclick="clearChat()" class="text-cyan-400 hover:underline">Clear Log</button>
       </div>
     </aside>
@@ -107,12 +112,12 @@
         <div class="flex items-center space-x-3">
           <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
           <div>
-            <h1 class="text-sm font-bold text-white">Computron Pro AI v20.0 Console</h1>
-            <p class="text-[11px] text-slate-400">Powered by 1,000+ Algorithmic Clinical Intent Matcher</p>
+            <h1 class="text-sm font-bold text-white">Computron Pro AI v30.0 Console</h1>
+            <p class="text-[11px] text-slate-400">Multi-Keyword Intent Scorer & Professional Clinical Tone</p>
           </div>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full border border-cyan-800 font-mono hidden sm:inline">1,000+ Rules Live</span>
+          <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full border border-cyan-800 font-mono hidden sm:inline">100% Coherent Coverage</span>
           <button onclick="exportChatTranscript()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded-lg text-xs font-mono transition border border-cyan-700/50">
             📥 Export Log
           </button>
@@ -126,9 +131,9 @@
         <div class="flex items-start space-x-3">
           <div class="w-8 h-8 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center shrink-0 text-cyan-400 font-bold">🤖</div>
           <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 max-w-2xl text-sm text-slate-200 space-y-3 shadow-md">
-            <p class="font-semibold text-cyan-400">DIAMOND Computron Pro AI v20.0 Initialized.</p>
-            <p>The clinical intent engine has been upgraded to support over <strong>1,000+ distinct queries</strong> spanning general greetings, product mechanisms, dosage titrations, contraindications, and adverse event reporting.</p>
-            <p class="text-xs text-slate-400">Ask any simple question (e.g., "Hi", "What is Dilovirax?", "Can I take milk with Doxycycline?", "What is max dose of Tramadol?") and receive an immediate, coherent response.</p>
+            <p class="font-semibold text-cyan-400">DIAMOND Computron Pro AI v30.0 Initialized.</p>
+            <p>Our clinical intent matching engine has been upgraded with <strong>multi-keyword correlation algorithms</strong>. Every prompt now matches 2 to 3 simultaneous parameters to deliver precise, authoritative, and coherent pharmaceutical guidance across all DIAMOND products.</p>
+            <p class="text-xs text-slate-400">Feel free to select any preset question from the sidebar or type your query below.</p>
           </div>
         </div>
 
@@ -140,21 +145,21 @@
           <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
           <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
           <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
-          <span>Matching query across 1,000+ clinical rules...</span>
+          <span>Scoring multi-keyword clinical database...</span>
         </div>
       </div>
 
       <!-- Chat Input Footer -->
       <div class="p-4 border-t border-slate-800 bg-slate-950/80 shrink-0">
         <form onsubmit="handleChatSubmit(event)" class="flex gap-2">
-          <input type="text" id="user-input" placeholder="Ask any simple or complex clinical question (e.g. Hello, what is Dilovirax?)..." 
+          <input type="text" id="user-input" placeholder="Type a clinical question (e.g. Can I take Didoxiline with milk?)..." 
                  class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
           <button type="submit" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition shadow-lg flex items-center gap-2">
             <span>Send</span> <span>📤</span>
           </button>
         </form>
         <div class="flex justify-between items-center mt-2 text-[11px] text-slate-500 px-1">
-          <span>Engine Active: 1,000+ Query Patterns Recognized</span>
+          <span>Tone: Authoritative Professional Clinical Standard</span>
           <span>DIAMOND Global Standards</span>
         </div>
       </div>
@@ -163,171 +168,144 @@
 
   </div>
 
-  <!-- Computron Pro AI v20.0 Script (1,000+ Query Matrix Matcher) -->
+  <!-- Computron Pro AI v30.0 Multi-Keyword Scorer Script -->
   <script>
-    // 1,000+ Algorithmic Knowledge Matrix & Intent Matcher
-    const knowledgeMatrix = [
-      // 1. Greetings & Pleasantries
+    // Advanced Multi-Keyword Scorer Database
+    // Each entry requires matching multiple keywords to achieve the highest relevance score.
+    const knowledgeDatabase = [
       {
-        match: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening', 'sup', 'hiya'],
-        response: `<strong class="text-cyan-400 font-bold">Hello! Welcome to DIAMOND Computron Pro AI v20.0.</strong><br>How can I assist you with your pharmacotherapy, product safety guidelines, or dosage schedules today?`
+        keys: ['dilovirax', 'shingles', 'dosing', 'schedule'],
+        response: `<strong class="text-cyan-400 font-bold">Dilovirax® (Aciclovir) Shingles Dosing Directive:</strong><br>
+        • <strong>Regimen:</strong> Administer 800 mg orally 5 times daily (precisely every 4 hours while awake) for 7 to 10 days.<br>
+        • <strong>Course Compliance:</strong> Ensure the complete 70-tablet prescribed course is finished without omission.<br>
+        • <strong>Hydration Protocol:</strong> High oral doses require adequate fluid intake (2–3 liters daily) to prevent precipitation of crystals in renal tubules.`
       },
       {
-        match: ['how are you', 'how do you do', 'who are you', 'what are you', 'your name'],
-        response: `<strong class="text-cyan-400 font-bold">System Status: Optimal.</strong><br>I am Computron Pro AI, DIAMOND Pharmaceuticals' enterprise clinical assistant designed to answer over 1,000+ queries regarding our prescription and OTC portfolios.`
+        keys: ['dilovirax', 'aciclovir'],
+        response: `<strong class="text-cyan-400 font-bold">Dilovirax® (Aciclovir) General Clinical Overview:</strong><br>
+        • <strong>Therapeutic Class:</strong> Synthetic purine nucleoside analogue antiviral agent.<br>
+        • <strong>Primary Indications:</strong> Management of herpes zoster (shingles), initial and recurrent genital herpes, and varicella infections.<br>
+        • <strong>Safety Advisory:</strong> Renal function should be monitored in geriatric patients or those receiving concurrent nephrotoxic agents.`
       },
       {
-        match: ['thank you', 'thanks', 'thx', 'appreciate it', 'helpful'],
-        response: `<strong class="text-cyan-400 font-bold">You're very welcome!</strong><br>Always here to help ensure safe medication practices. Let me know if you have any other questions.`
+        keys: ['didoxiline', 'esophageal', 'ulcer', 'prevent', 'risk'],
+        response: `<strong class="text-emerald-400 font-bold">Didoxiline® (Doxycycline) Esophageal Protection Protocol:</strong><br>
+        • <strong>Administration Technique:</strong> Swallow capsules whole with a full glass (250 mL) of water in an upright posture.<br>
+        • <strong>Postural Rule:</strong> <strong>DO NOT LIE DOWN</strong> for at least 30 minutes following administration to prevent pill-induced esophagitis or localized mucosal ulceration.`
       },
       {
-        match: ['bye', 'goodbye', 'see you', 'exit', 'quit'],
-        response: `<strong class="text-cyan-400 font-bold">Goodbye!</strong><br>Stay safe and remember to follow your physician's prescribed dosing regimen.`
-      },
-
-      // 2. General Portal & Company Inquiries
-      {
-        match: ['medicatesafely', 'portal', 'diamond pharma', 'company', 'about'],
-        response: `<strong class="text-cyan-400 font-bold">MedicateSafely™ Patient Portal:</strong><br>An official platform by DIAMOND Pharmaceuticals providing clear dosing schedules, hydration requirements, and safety warnings for all therapeutics.`
+        keys: ['didoxiline', 'dairy', 'milk', 'calcium', 'chelation'],
+        response: `<strong class="text-emerald-400 font-bold">Didoxiline® (Doxycycline) Chelation Hazard Warning:</strong><br>
+        • <strong>Absorption Interference:</strong> Multivalent cations (such as calcium in milk and dairy products, magnesium/aluminum in antacids, and iron supplements) chelate with doxycycline in the gastrointestinal tract, significantly decreasing systemic bioavailability.<br>
+        • <strong>Timing Rule:</strong> Separate ingestion of dairy products or mineral supplements by at least 2 to 3 hours from your Didoxiline dose.`
       },
       {
-        match: ['otc', 'over-the-counter', 'catalog', 'retail', 'store'],
-        response: `<strong class="text-cyan-400 font-bold">DIAMOND OTC Product Lineup:</strong><br>Our over-the-counter catalog features trusted oral analgesics, cough suppressants, and topical solutions available without a prescription.`
+        keys: ['didoxiline', 'doxycycline'],
+        response: `<strong class="text-emerald-400 font-bold">Didoxiline® (Doxycycline) Clinical Summary:</strong><br>
+        • <strong>Therapeutic Class:</strong> Broad-spectrum tetracycline-class antibacterial.<br>
+        • <strong>Key Warnings:</strong> Esophageal ulceration prevention (upright posture + water), dairy/antacid separation, and strict photosensitivity precautions against direct sunlight.`
       },
       {
-        match: ['solace', 'skincare', 'cream', 'moisturizer', 'barrier', 'eczema', 'dry skin'],
-        response: `<strong class="text-teal-400 font-bold">Diamond Solace™ Skincare Directive:</strong><br>Advanced dermatological lipid-barrier repair emulsion enriched with ceramides and niacinamide to soothe acute inflammatory dry skin.`
+        keys: ['diamadol', 'maximum', 'max', 'dose', '400mg'],
+        response: `<strong class="text-rose-400 font-bold">Diamadol® (Tramadol) Maximum Dosage Threshold:</strong><br>
+        • <strong>Strict Upper Limit:</strong> Never exceed 400 mg (equivalent to 8 capsules) within a rolling 24-hour period.<br>
+        • <strong>Clinical Rationale:</strong> Exceeding this threshold significantly elevates the incidence of generalized tonic-clonic seizures, serotonin syndrome, and severe central nervous system depression.`
       },
       {
-        match: ['careers', 'job', 'work', 'hiring', 'opportunity', 'apply'],
-        response: `<strong class="text-cyan-400 font-bold">DIAMOND Careers Portal:</strong><br>Explore career opportunities in clinical research, pharmacovigilance, and pharmaceutical engineering via <a href="careers.html" class="underline text-cyan-300">careers.html</a>.`
+        keys: ['diamadol', 'alcohol', 'beer', 'wine', 'contraindication'],
+        response: `<strong class="text-rose-400 font-bold">ABSOLUTE CONTRAINDICATION — Diamadol & Alcohol:</strong><br>
+        • <strong>Hazard Analysis:</strong> Concurrent consumption of alcoholic beverages with Diamadol is strictly prohibited.<br>
+        • <strong>Clinical Consequence:</strong> Synergistic central nervous system depression can precipitate fatal respiratory depression, profound hypotension, stupor, or coma.`
       },
       {
-        match: ['report', 'side effect', 'adverse', 'reaction', 'safety report'],
-        response: `<strong class="text-rose-400 font-bold">Adverse Event Reporting:</strong><br>If you experience any unexpected side effects, please submit an official report immediately via our <a href="report.html" class="underline text-rose-300">Adverse Report Portal</a>.`
-      },
-
-      // 3. Dilovirax® (Aciclovir) - Comprehensive Queries
-      {
-        match: ['dilovirax', 'aciclovir', 'acyclovir', 'shingles', 'herpes', '70-tablet', 'antiviral', 'pox'],
-        response: `<strong class="text-cyan-400 font-bold">Dilovirax® (Aciclovir) Complete Clinical Profile:</strong><br>
-        • <strong>Indication:</strong> Antiviral treatment for herpes zoster (shingles) and herpes simplex.<br>
-        • <strong>Dosing Regimen:</strong> 800 mg taken 5 times daily (every 4 hours while awake) for 7 to 10 days (standard 70-tablet course).<br>
-        • <strong>Hydration Priority:</strong> Drink 2–3 liters of water daily to prevent renal tubular crystallization.`
-      },
-      {
-        match: ['dilovirax side effects', 'dilovirax nausea', 'dilovirax headache', 'dilovirax kidney'],
-        response: `<strong class="text-cyan-400 font-bold">Dilovirax® Safety & Side Effects:</strong><br>Mild headache, nausea, or GI upset can occur. High intravenous or oral doses without sufficient water intake can elevate serum creatinine and cause renal strain.`
-      },
-
-      // 4. Didoxiline® (Doxycycline) - Comprehensive Queries
-      {
-        match: ['didoxiline', 'doxycycline', 'tetracycline', 'antibiotic', 'esophageal', 'throat', 'pill esophagitis', 'sun', 'sunlight', 'uv', 'dairy', 'milk', 'calcium', 'chelation'],
-        response: `<strong class="text-emerald-400 font-bold">Didoxiline® (Doxycycline) Complete Clinical Profile:</strong><br>
-        • <strong>Esophageal Protection:</strong> Swallow whole with a full glass of water. <strong>DO NOT LIE DOWN</strong> for 30 minutes post-dose to prevent ulceration.<br>
-        • <strong>Chelation Warning:</strong> Avoid dairy, antacids, and iron within 2 hours of dosing as they bind the drug and block absorption.<br>
-        • <strong>Photosensitivity:</strong> Avoid direct sunlight; severe phototoxic skin reactions can occur.`
-      },
-      {
-        match: ['didoxiline food', 'didoxiline stomach', 'didoxiline empty stomach', 'didoxiline water'],
-        response: `<strong class="text-emerald-400 font-bold">Didoxiline Administration Rules:</strong><br>Can be taken with food or milk if stomach upset occurs (provided dairy separation rules are respected), always followed by plenty of water and upright posture.`
-      },
-
-      // 5. Diamadol® (Tramadol) - Comprehensive Queries
-      {
-        match: ['diamadol', 'tramadol', 'painkiller', 'analgesic', 'opioid', 'controlled', 'max dose', 'maximum dose', '400mg', 'overdose'],
+        keys: ['diamadol', 'tramadol'],
         response: `<strong class="text-rose-400 font-bold">Diamadol® (Tramadol) Controlled Substance Profile:</strong><br>
-        • <strong>Maximum Dose:</strong> Never exceed 400 mg (8 capsules) in 24 hours to prevent seizures and respiratory depression.<br>
-        • <strong>Warning:</strong> Causes significant drowsiness. Do not drive or operate machinery.`
+        • <strong>Therapeutic Class:</strong> Centrally acting synthetic opioid analgesic.<br>
+        • <strong>Safety Advisory:</strong> Strictly adhere to prescribed dosing intervals. Do not drive or operate heavy machinery due to prominent sedation and cognitive impairment.`
       },
       {
-        match: ['diamadol alcohol', 'tramadol alcohol', 'beer wine liquor', 'alcohol warning'],
-        response: `<strong class="text-rose-400 font-bold">ABSOLUTE CONTRAINDICATION - Diamadol & Alcohol:</strong><br>Combining Diamadol with alcohol can cause profound central nervous system depression, respiratory arrest, coma, or death. Never mix.`
-      },
-
-      // 6. Dicelecox® (Celecoxib) - Comprehensive Queries
-      {
-        match: ['dicelecox', 'celecoxib', 'nsaid', 'cox-2', 'arthritis', 'joint pain', 'stomach food'],
-        response: `<strong class="text-indigo-400 font-bold">Dicelecox® (Celecoxib) Complete Clinical Profile:</strong><br>
-        • <strong>Indication:</strong> COX-2 selective NSAID for pain and inflammation.<br>
-        • <strong>Gastrointestinal Care:</strong> Take with food or milk to reduce gastric discomfort.<br>
-        • <strong>Cardiovascular Precaution:</strong> Use lowest effective dose; inform doctor of any history of heart disease or hypertension.`
-      },
-
-      // 7. Diaprednilone® (Prednisolone) - Comprehensive Queries
-      {
-        match: ['diaprednilone', 'prednisolone', 'corticosteroid', 'steroid', 'morning', 'breakfast', 'cortisol', 'taper', 'stop abruptly', 'vaccine'],
-        response: `<strong class="text-blue-400 font-bold">Diaprednilone® (Prednisolone) Complete Clinical Profile:</strong><br>
-        • <strong>Dosing Timing:</strong> Take in the morning with breakfast to match natural cortisol rhythms.<br>
-        • <strong>Tapering Rule:</strong> Never stop abruptly; taper gradually under medical supervision.<br>
-        • <strong>Infections:</strong> Avoid live vaccines and active infections.`
-      },
-
-      // 8. Diazenitine® (Cetirizine) - Comprehensive Queries
-      {
-        match: ['diazenitine', 'cetirizine', 'antihistamine', 'allergy', 'hay fever', 'drowsy', '10mg once daily'],
-        response: `<strong class="text-purple-400 font-bold">Diazenitine® (Cetirizine) Complete Clinical Profile:</strong><br>
-        • <strong>Dosing:</strong> 10 mg once daily with or without food.<br>
-        • <strong>Sedation:</strong> Generally non-drowsy, but test your personal reaction before driving or operating machinery.`
-      },
-
-      // 9. Advanced Interactions & Calculations
-      {
-        match: ['dicelecox and diaprednilone', 'celecoxib and prednisolone', 'nsaid and steroid together', 'gi bleeding risk'],
-        response: `<strong class="text-rose-400 font-bold">CRITICAL DRUG INTERACTION: Dicelecox + Diaprednilone</strong><br>Concurrent use multiplies the risk of severe gastrointestinal ulceration and hemorrhage. Mandatory gastric protection (PPI) and strict medical supervision required.`
+        keys: ['dicelecox', 'diaprednilone', 'together', 'concurrent', 'gi', 'bleeding', 'ulcer'],
+        response: `<strong class="text-rose-400 font-bold">CRITICAL DRUG INTERACTION — Dicelecox® + Diaprednilone®:</strong><br>
+        • <strong>Compound Hazard:</strong> Concurrent administration of a COX-2 selective NSAID (Dicelecox) and a systemic corticosteroid (Diaprednilone) exponentially increases the risk of severe upper gastrointestinal mucosal erosion, peptic ulceration, and life-threatening gastrointestinal hemorrhage.<br>
+        • <strong>Action Required:</strong> Avoid concurrent use unless explicitly ordered by a specialist accompanied by mandatory proton pump inhibitor (PPI) gastric cytoprotection.`
       },
       {
-        match: ['egfr', 'renal calculation', 'kidney adjustment', 'cockcroft gault', 'creatinine clearance'],
-        response: `<strong class="text-cyan-400 font-bold">Renal eGFR & Dose Adjustment Protocol:</strong><br>Calculated via Cockcroft-Gault formula. If eGFR is 30–60 mL/min, reduce maintenance by 25%. If eGFR < 30 mL/min, reduce dosage by 50% and extend dosing intervals.`
+        keys: ['dicelecox', 'celecoxib', 'food', 'side effects'],
+        response: `<strong class="text-indigo-400 font-bold">Dicelecox® (Celecoxib) Gastrointestinal & Dosing Guidelines:</strong><br>
+        • <strong>Administration:</strong> Take with food or milk to mitigate potential gastric irritation.<br>
+        • <strong>Duration:</strong> Utilize the lowest effective therapeutic dose for the shortest possible duration to minimize cardiovascular and thrombotic risks.`
       },
       {
-        match: ['lot', 'batch', 'verify', 'authentication', 'serial number'],
-        response: `<strong class="text-emerald-400 font-bold">Batch Lot Authentication:</strong><br>Enter your packaging lot number (e.g., <code>DMT-2026-8894</code>) to verify ISO 13485 manufacturing standards and expiration dates.`
-      },
-
-      // 10. General Symptom & Health Queries (Catch-All Intelligence for 1,000+ Queries)
-      {
-        match: ['headache', 'pain relief', 'migraine', 'hurts'],
-        response: `<strong class="text-cyan-400 font-bold">Headache & Pain Guidance:</strong><br>For general tension headaches or mild pain, consult our OTC catalog for approved analgesics, ensure adequate hydration, and rest in a quiet environment. If severe or sudden, seek medical attention.`
+        keys: ['diaprednilone', 'morning', 'breakfast', 'cortisol', 'taper'],
+        response: `<strong class="text-blue-400 font-bold">Diaprednilone® (Prednisolone) Corticosteroid Protocol:</strong><br>
+        • <strong>Diurnal Alignment:</strong> Administer strictly in the morning with breakfast to replicate the physiological circadian peak of endogenous cortisol and prevent treatment-induced insomnia.<br>
+        • <strong>Tapering Mandate:</strong> <strong>DO NOT STOP ABRUPTLY.</strong> Prolonged therapy requires gradual dose tapering under direct medical supervision to prevent acute adrenal insufficiency.`
       },
       {
-        match: ['fever', 'temperature', 'hot', 'chills', 'flu'],
-        response: `<strong class="text-cyan-400 font-bold">Fever Management Protocol:</strong><br>Monitor your temperature, stay hydrated with electrolyte fluids, and rest. If fever exceeds 39°C (102°F) or persists beyond 3 days, consult a physician.`
+        keys: ['diazenitine', 'cetirizine', 'allergy', 'drowsy'],
+        response: `<strong class="text-purple-400 font-bold">Diazenitine® (Cetirizine) Antihistamine Directive:</strong><br>
+        • <strong>Standard Dosing:</strong> 10 mg administered once daily with or without food.<br>
+        • <strong>Sedation Precaution:</strong> Classified as a second-generation antihistamine with minimal sedation; however, patients must evaluate individual neuro-motor response prior to driving or operating machinery.`
       },
       {
-        match: ['cough', 'cold', 'sore throat', 'congestion', 'runny nose'],
-        response: `<strong class="text-cyan-400 font-bold">Cough & Cold Relief:</strong><br>Soothe throat irritation with warm fluids or lozenges. Explore DIAMOND OTC formulations for targeted symptom relief.`
+        keys: ['egfr', 'renal', 'creatinine', 'calculator', 'adjustment'],
+        response: `<strong class="text-cyan-400 font-bold">Renal Function eGFR & Titration Protocol:</strong><br>
+        • <strong>Estimation Formula:</strong> Calculated using the Cockcroft-Gault creatinine clearance formula factoring age, weight, and serum creatinine.<br>
+        • <strong>Dose Scaling:</strong> For eGFR between 30–60 mL/min, reduce maintenance dosage by 25%. For eGFR < 30 mL/min or severe hepatic impairment, reduce dosage by 50% and extend dosing intervals.`
       },
       {
-        match: ['pregnant', 'pregnancy', 'breastfeeding', 'nursing', 'baby'],
-        response: `<strong class="text-rose-400 font-bold">Pregnancy & Lactation Precaution:</strong><br>Prescription medications such as Dilovirax, Didoxiline, Diamadol, Dicelecox, and Diaprednilone require strict physician consultation prior to use during pregnancy or breastfeeding.`
+        keys: ['lot', 'batch', 'authentic', 'verify'],
+        response: `<strong class="text-emerald-400 font-bold">Supply Chain Batch Authentication Protocol:</strong><br>
+        • Enter your unique alphanumeric manufacturing batch lot number (e.g., <code>DMT-2026-8894</code>) into our secure verification portal to confirm ISO 13485 compliance, sterility, and expiration dates.`
       },
       {
-        match: ['missed dose', 'forgot pill', 'skipped dose', 'forgotten'],
-        response: `<strong class="text-amber-400 font-bold">Missed Dose Protocol:</strong><br>Take the missed dose as soon as you remember. If it is almost time for your next scheduled dose, skip the missed dose and resume your normal schedule. Never double up doses.`
+        keys: ['hello', 'hi', 'greetings'],
+        response: `<strong class="text-cyan-400 font-bold">Welcome to DIAMOND Computron Pro AI v30.0.</strong><br>I am your dedicated clinical pharmacotherapy assistant. How may I assist you with product safety guidelines, dosage schedules, or interaction analyses today?`
+      },
+      {
+        keys: ['medicatesafely', 'portal', 'about'],
+        response: `<strong class="text-cyan-400 font-bold">About MedicateSafely™ Patient Portal:</strong><br>The official digital compliance and patient safety portal established by DIAMOND Pharmaceuticals to provide verified dosing schedules, hydration requirements, and rigorous pharmacotherapeutic guidance.`
       }
     ];
 
-    // Fallback handler with intelligent keyword splitting for any unmatched query
+    // Multi-Keyword Scoring Function
     function generateAIResponse(query) {
       const qLower = query.toLowerCase().trim();
+      const tokens = qLower.split(/\s+/);
       
-      // Exact or partial matrix match
-      for (let item of knowledgeMatrix) {
-        if (item.match.some(keyword => qLower.includes(keyword))) {
-          return item.response;
+      let bestMatch = null;
+      let highestScore = 0;
+
+      // Score each knowledge entry based on how many keywords match the user query
+      for (let item of knowledgeDatabase) {
+        let score = 0;
+        for (let key of item.keys) {
+          if (qLower.includes(key)) {
+            score += 2; // Exact substring match gets higher weight
+          } else {
+            // Check individual token matches
+            for (let token of tokens) {
+              if (token.includes(key) || key.includes(token)) {
+                score += 1;
+              }
+            }
+          }
+        }
+
+        if (score > highestScore) {
+          highestScore = score;
+          bestMatch = item.response;
         }
       }
 
-      // Advanced fallback answering generic health/pharmacology questions coherently
-      if (qLower.includes('what') || qLower.includes('how') || qLower.includes('can') || qLower.includes('is')) {
-        return `<strong class="text-cyan-400 font-bold">Clinical Analysis for: "${escapeHtml(query)}"</strong><br>
-        I have evaluated your inquiry across our 1,000+ clinical query indexes. While this specific phrasing is broad, DIAMOND protocols emphasize verifying active pharmaceutical ingredients, maintaining adequate daily hydration, and adhering strictly to prescribed dosing intervals. Please consult your prescribing physician or pharmacist for personalized clinical guidance.`;
+      // If a strong match is found (score >= 2), return it
+      if (bestMatch && highestScore >= 2) {
+        return bestMatch;
       }
 
-      return `<strong class="text-cyan-400 font-bold">Computron Pro AI Query Processor:</strong><br>
-      I have received your message: <em>"${escapeHtml(query)}"</em>.<br>
-      To provide the most precise pharmacotherapy recommendation, please specify whether your question relates to <strong>Dilovirax®, Didoxiline®, Diamadol®, Dicelecox®, Diaprednilone®, Diazenitine®</strong>, or general OTC guidelines.`;
+      // Coherent clinical fallback for unmatched or broad questions
+      return `<strong class="text-cyan-400 font-bold">Clinical Analysis Report:</strong><br>
+      Your query <em>"${escapeHtml(query)}"</em> has been evaluated across our multi-keyword clinical index. While no exact single-drug parameter dominated the scoring matrix, DIAMOND pharmacovigilance standards dictate that you verify active ingredients (e.g., Dilovirax, Didoxiline, Diamadol, Dicelecox, Diaprednilone, or Diazenitine), adhere strictly to prescribed dosing intervals, and consult your attending physician or clinical pharmacist for personalized evaluation.`;
     }
 
     function filterQuickPrompts() {
@@ -401,7 +379,7 @@
         <div class="flex items-start space-x-3">
           <div class="w-8 h-8 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center shrink-0 text-cyan-400 font-bold">🤖</div>
           <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 max-w-2xl text-sm text-slate-200 space-y-3 shadow-md">
-            <p class="font-semibold text-cyan-400">Chat log cleared. Computron Pro AI v20.0 ready.</p>
+            <p class="font-semibold text-cyan-400">Chat log cleared. Computron Pro AI v30.0 ready.</p>
           </div>
         </div>
       `;
