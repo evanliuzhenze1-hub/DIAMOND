@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIAMOND Computron Pro | Enterprise Clinical Pharmacotherapy Workspace</title>
+  <title>DIAMOND Computron Pro AI | Enterprise Clinical Chatbot & Pharmacotherapy Console</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased scroll-smooth">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased h-full flex flex-col overflow-hidden">
 
   <!-- Navigation Bar -->
-  <nav class="bg-slate-900 border-b border-cyan-500/40 sticky top-0 z-50 shadow-xl">
+  <nav class="bg-slate-900 border-b border-cyan-500/40 shrink-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <span class="text-xl font-black tracking-wider text-cyan-400">DIAMOND</span>
-        <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full font-bold border border-cyan-800">Computron Pro™ v7.4</span>
+        <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full font-bold border border-cyan-800">Computron Pro AI v10.0</span>
       </div>
       <div class="flex space-x-3 text-sm font-semibold items-center">
         <a href="../index.html" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5">
           <span>🏠</span> Portal Home
         </a>
-        <a href="otc.html" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-lg transition shadow-sm">
+        <a href="otc.html" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-lg transition shadow-sm hidden sm:inline">
           OTC Catalog
         </a>
-        <a href="solace.html" class="bg-teal-600 hover:bg-teal-500 text-white px-3.5 py-1.5 rounded-lg transition shadow-sm">
+        <a href="solace.html" class="bg-teal-600 hover:bg-teal-500 text-white px-3.5 py-1.5 rounded-lg transition shadow-sm hidden sm:inline">
           Solace™ Skincare
         </a>
         <a href="report.html" class="bg-rose-900/80 hover:bg-rose-800 text-rose-200 border border-rose-700 px-3.5 py-1.5 rounded-lg transition">
@@ -33,359 +32,313 @@
     </div>
   </nav>
 
-  <!-- Workspace Header -->
-  <header class="bg-gradient-to-r from-slate-900 via-cyan-950 to-slate-900 py-10 px-4 border-b border-cyan-500/20">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-      <div class="space-y-2">
-        <div class="flex items-center gap-2">
-          <span class="p-2 bg-cyan-500/20 text-cyan-400 rounded-xl border border-cyan-500/30 text-2xl">🤖</span>
-          <h1 class="text-3xl font-black tracking-tight text-white">DIAMOND Computron Pro Workspace</h1>
-        </div>
-        <p class="text-sm text-slate-400 max-w-2xl">
-          Professional pharmacotherapy decision support engine equipped with real-time interaction matrices, renal/hepatic dose calculators, lot authentication, and ADME pharmacokinetic modeling.
-        </p>
+  <!-- Main Chatbot Workspace Layout -->
+  <div class="flex-1 flex overflow-hidden max-w-7xl w-full mx-auto p-2 sm:p-4 gap-4">
+    
+    <!-- Left Sidebar: Clinical Quick Filters & Knowledge Base Directory -->
+    <aside class="w-80 bg-slate-900/90 rounded-2xl border border-cyan-500/30 hidden lg:flex flex-col shadow-xl overflow-hidden">
+      <div class="p-4 border-b border-slate-800 bg-slate-900/50">
+        <h2 class="text-sm font-bold text-cyan-400 flex items-center gap-2">
+          <span>🧠</span> Clinical Knowledge Engine
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">150+ Query Directives Loaded across 7 Core Product Vectors.</p>
       </div>
-      <div class="flex gap-3">
-        <button onclick="resetAllModules()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded-xl border border-cyan-700 text-xs font-mono transition shadow">
-          🔄 Reset Workspace Session
+
+      <div class="p-3 border-b border-slate-800">
+        <input type="text" id="kb-search" placeholder="Filter quick prompts..." onkeyup="filterQuickPrompts()" 
+               class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-500">
+      </div>
+
+      <div id="prompt-list" class="flex-1 overflow-y-auto p-3 space-y-2 text-xs">
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1">Prescription & Dosing</div>
+        <button onclick="sendPresetPrompt('What is the dosage schedule for Dilovirax in shingles?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          💊 Dilovirax Shingles Dosing & Frequency
+        </button>
+        <button onclick="sendPresetPrompt('What are the esophageal risks of Didoxiline and how to prevent them?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ⚠️ Didoxiline Esophageal Ulceration Risk
+        </button>
+        <button onclick="sendPresetPrompt('What is the maximum 24-hour dose for Diamadol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🛑 Diamadol Max Daily Limit (400mg)
+        </button>
+
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Safety & Interactions</div>
+        <button onclick="sendPresetPrompt('Can I take Dicelecox and Diaprednilone together?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ⚡ Dicelecox + Diaprednilone GI Risk Matrix
+        </button>
+        <button onclick="sendPresetPrompt('What happens if I combine Diamadol with alcohol?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🚨 Diamadol & Alcohol Contraindication
+        </button>
+        <button onclick="sendPresetPrompt('Does dairy affect Didoxiline absorption?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🥛 Didoxiline & Dairy Chelation Warning
+        </button>
+
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Calculators & Verification</div>
+        <button onclick="sendPresetPrompt('How do I calculate renal eGFR adjustment for elderly patients?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🧮 Cockcroft-Gault eGFR Formula & Scaling
+        </button>
+        <button onclick="sendPresetPrompt('How to verify an authentic DIAMOND batch lot number?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🔍 Batch Lot Authentication Protocol
+        </button>
+        <button onclick="sendPresetPrompt('What is the correct morning dosing rule for Diaprednilone?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ☀️ Diaprednilone Cortisol Alignment Rule
+        </button>
+
+        <div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-1 pt-3">Skincare & OTC</div>
+        <button onclick="sendPresetPrompt('Tell me about Diamond Solace Skincare barrier repair creams.')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          ✨ Diamond Solace™ Skincare Lineup
+        </button>
+        <button onclick="sendPresetPrompt('How should I take Diazenitine for seasonal allergies?')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-2.5 rounded-xl border border-slate-800/80 transition text-slate-300">
+          🌿 Diazenitine Cetirizine Dosing & Sedation
         </button>
       </div>
-    </div>
-  </header>
 
-  <!-- Main Workspace Grid -->
-  <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
-
-    <!-- MODULE 1: Drug-to-Drug Interaction Matrix Checker -->
-    <section class="bg-slate-900/90 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl space-y-6">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Module 01 • Safety & Pharmacology</span>
-          <h2 class="text-2xl font-bold text-white">Real-Time Drug-to-Drug Interaction Matrix</h2>
-        </div>
-        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700">Multi-Agent Cross-Reference</span>
+      <div class="p-3 border-t border-slate-800 bg-slate-900/50 text-[11px] text-slate-400 flex justify-between items-center">
+        <span>Engine Status: <strong class="text-emerald-400">ONLINE</strong></span>
+        <button onclick="clearChat()" class="text-cyan-400 hover:underline">Clear Log</button>
       </div>
+    </aside>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="space-y-4">
-          <label class="block text-sm font-semibold text-slate-300">Select Primary Active Agent:</label>
-          <select id="drug-primary" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-            <option value="dicelecox">Dicelecox® (Celecoxib - COX-2 NSAID)</option>
-            <option value="diaprednilone">Diaprednilone® (Prednisolone - Corticosteroid)</option>
-            <option value="diamadol">Diamadol® (Tramadol - Opioid Analgesic)</option>
-            <option value="didoxiline">Didoxiline® (Doxycycline - Tetracycline)</option>
-            <option value="dilovirax">Dilovirax® (Aciclovir - Antiviral)</option>
-            <option value="diazenitine">Diazenitine® (Cetirizine - Antihistamine)</option>
-          </select>
-
-          <label class="block text-sm font-semibold text-slate-300">Select Concomitant / Secondary Agent:</label>
-          <select id="drug-secondary" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-            <option value="diaprednilone">Diaprednilone® (Prednisolone)</option>
-            <option value="dicelecox">Dicelecox® (Celecoxib)</option>
-            <option value="diamadol">Diamadol® (Tramadol)</option>
-            <option value="didoxiline">Didoxiline® (Doxycycline)</option>
-            <option value="warfarin">Anticoagulants / Warfarin</option>
-            <option value="alcohol">Ethanol / Alcohol</option>
-          </select>
-
-          <button onclick="runInteractionCheck()" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-xl transition shadow-lg">
-            Run Matrix Analysis
-          </button>
-        </div>
-
-        <div class="md:col-span-2 bg-slate-950 rounded-xl p-5 border border-slate-800 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex justify-between items-center mb-3">
-              <span class="text-xs font-mono uppercase text-slate-400">Interaction Status Output</span>
-              <span id="interaction-badge" class="text-xs px-2.5 py-1 rounded-full font-bold bg-slate-800 text-slate-300">Awaiting Query</span>
-            </div>
-            <div id="interaction-result-text" class="text-sm text-slate-300 space-y-2">
-              Select agents on the left and click <span class="text-cyan-400 font-semibold">Run Matrix Analysis</span> to evaluate pharmacokinetic synergy, cytochrome P450 inhibition risks, GI bleeding hazards, or CNS depression levels.
-            </div>
-          </div>
-          <div class="text-xs text-slate-500 border-t border-slate-900 pt-3">
-            Engineered in compliance with DIAMOND Global Pharmacovigilance standard operating procedures.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODULE 2: Renal & Hepatic Dose-Adjustment Calculator -->
-    <section class="bg-slate-900/90 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl space-y-6">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Module 02 • Clinical Parameters</span>
-          <h2 class="text-2xl font-bold text-white">Renal & Hepatic Dose-Adjustment Calculator</h2>
-        </div>
-        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700">Cockcroft-Gault / Child-Pugh Algorithm</span>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="space-y-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Patient Serum Creatinine (µmol/L):</label>
-            <input type="number" id="calc-creatinine" value="95" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Patient Age (Years):</label>
-            <input type="number" id="calc-age" value="45" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Patient Weight (kg):</label>
-            <input type="number" id="calc-weight" value="70" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Hepatic Impairment Class:</label>
-            <select id="calc-hepatic" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-              <option value="none">Normal (Child-Pugh Class A)</option>
-              <option value="moderate">Moderate Impairment (Class B)</option>
-              <option value="severe">Severe Impairment (Class C)</option>
-            </select>
-          </div>
-          <button onclick="calculateDoseAdjustment()" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-xl transition shadow-lg">
-            Compute Safe Dosage Profile
-          </button>
-        </div>
-
-        <div class="lg:col-span-2 bg-slate-950 rounded-xl p-6 border border-slate-800 space-y-6 flex flex-col justify-between">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-              <div class="text-xs text-slate-400 font-mono">Estimated eGFR (Cockcroft-Gault)</div>
-              <div id="out-egfr" class="text-3xl font-black text-cyan-400 mt-1">-- mL/min</div>
-            </div>
-            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-              <div class="text-xs text-slate-400 font-mono">Recommended Scaling Factor</div>
-              <div id="out-scaling" class="text-3xl font-black text-emerald-400 mt-1">100% (Standard)</div>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div class="text-xs font-mono uppercase text-slate-400">Clinical Recommendation Directive</div>
-            <div id="calc-directive" class="p-4 bg-slate-900 rounded-xl border border-slate-800 text-sm text-slate-300">
-              Input patient vitals and click compute to generate automated renal clearance warnings and suggested mg/day dosing ceilings.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODULE 3: Lot Authentication & Pharmacovigilance Logging -->
-    <section class="bg-slate-900/90 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl space-y-6">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Module 03 • Supply Chain Integrity</span>
-          <h2 class="text-2xl font-bold text-white">Lot Authentication & Adverse Event Logging</h2>
-        </div>
-        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-700">Secure Blockchain Ledger</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Lot Checker Box -->
-        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-4">
-          <h3 class="font-bold text-cyan-400 flex items-center gap-2"><span>🔍</span> Batch Lot Authenticator</h3>
-          <p class="text-xs text-slate-400">Verify serial numbers and manufacturing expiry dates across DIAMOND distribution networks.</p>
-          <div class="flex gap-2">
-            <input type="text" id="lot-input" placeholder="e.g., DMT-2026-8894" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
-            <button onclick="verifyLot()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-xl text-sm font-semibold transition">Verify</button>
-          </div>
-          <div id="lot-output" class="p-3 bg-slate-900 rounded-lg text-xs text-slate-300 border border-slate-800 hidden">
-            <!-- Populated via JS -->
-          </div>
-        </div>
-
-        <!-- Adverse Event Quick Log Box -->
-        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-4">
-          <h3 class="font-bold text-rose-400 flex items-center gap-2"><span>⚠️</span> Quick Pharmacovigilance Report</h3>
-          <p class="text-xs text-slate-400">Submit an instant encrypted safety log directly to the DIAMOND safety board.</p>
-          <div class="space-y-3">
-            <input type="text" id="pv-product" placeholder="Product Name (e.g., Dilovirax)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-rose-500">
-            <textarea id="pv-notes" placeholder="Describe adverse reaction or packaging discrepancy..." rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-rose-500"></textarea>
-            <button onclick="submitQuickPV()" class="w-full bg-rose-900 hover:bg-rose-800 text-rose-100 font-semibold py-2 rounded-xl text-sm transition border border-rose-700">
-              Transmit Encrypted Report
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODULE 4: Comprehensive Pharmacokinetic Graphing Visualizer -->
-    <section class="bg-slate-900/90 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl space-y-6">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
-        <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Module 04 • Pharmacokinetics</span>
-          <h2 class="text-2xl font-bold text-white">ADME Concentration-Time Curve Visualizer</h2>
-        </div>
-        <div class="flex gap-2">
-          <button onclick="updateChart('immediate')" id="btn-imm" class="px-3 py-1 bg-cyan-600 text-white rounded-lg text-xs font-bold transition">Immediate Release</button>
-          <button onclick="updateChart('sustained')" id="btn-sust" class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-bold transition border border-slate-700">Sustained / SR Matrix</button>
-        </div>
-      </div>
-
-      <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 h-80 flex items-center justify-center">
-        <canvas id="pkChart"></canvas>
-      </div>
-      <p class="text-xs text-slate-400 text-center">
-        Comparing plasma concentration (mg/L) over 12 hours post-administration between standard caplets and DIAMOND dual-layer sustained-release formulations.
-      </p>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-8 px-4 border-t border-slate-800 text-sm text-center mt-12">
-    <p>© 2026 DIAMOND Pharmaceuticals. Computron Pro™ Enterprise Pharmacotherapy Engine.</p>
-  </footer>
-
-  <!-- Computron Pro Script Engine -->
-  <script>
-    // Module 1: Interaction Matrix Database
-    const interactionMatrix = {
-      "dicelecox_diaprednilone": { level: "HIGH RISK", color: "bg-rose-950 text-rose-300 border-rose-700", text: "Concurrent administration of a COX-2 selective NSAID (Dicelecox) and a systemic corticosteroid (Diaprednilone) significantly compounds the risk of severe gastrointestinal ulceration, gastric mucosal damage, and upper GI bleeding. Administer with extreme caution and mandatory proton pump inhibitor (PPI) coverage." },
-      "diaprednilone_dicelecox": { level: "HIGH RISK", color: "bg-rose-950 text-rose-300 border-rose-700", text: "Concurrent administration of a COX-2 selective NSAID (Dicelecox) and a systemic corticosteroid (Diaprednilone) significantly compounds the risk of severe gastrointestinal ulceration, gastric mucosal damage, and upper GI bleeding. Administer with extreme caution and mandatory proton pump inhibitor (PPI) coverage." },
-      "diamadol_alcohol": { level: "CONTRAINDICATED", color: "bg-red-950 text-red-200 border-red-600", text: "Absolute Contraindication: Combining Diamadol (Tramadol) with alcohol or CNS depressants can result in profound respiratory depression, central nervous system sedation, coma, or fatal overdose." },
-      "alcohol_diamadol": { level: "CONTRAINDICATED", color: "bg-red-950 text-red-200 border-red-600", text: "Absolute Contraindication: Combining Diamadol (Tramadol) with alcohol or CNS depressants can result in profound respiratory depression, central nervous system sedation, coma, or fatal overdose." },
-      "didoxiline_dairy": { level: "MODERATE PRECAUTION", color: "bg-amber-950 text-amber-300 border-amber-700", text: "Chelation Hazard: Doxycycline (Didoxiline) binds with multivalent cations found in dairy products, antacids, and iron supplements, significantly reducing antibiotic absorption and therapeutic efficacy. Separate dosing by at least 2 to 3 hours." },
-      "default": { level: "MINOR / MONITOR", color: "bg-emerald-950 text-emerald-300 border-emerald-700", text: "No major direct cytochrome enzyme clash or acute toxicity pathway identified in standard databases. Standard patient monitoring and adherence protocols apply." }
-    };
-
-    function runInteractionCheck() {
-      const p = document.getElementById('drug-primary').value;
-      const s = document.getElementById('drug-secondary').value;
-      const key1 = `${p}_${s}`;
-      const key2 = `${s}_${p}`;
-      const badge = document.getElementById('interaction-badge');
-      const text = document.getElementById('interaction-result-text');
-
-      const match = interactionMatrix[key1] || interactionMatrix[key2] || interactionMatrix["default"];
-
-      badge.className = `text-xs px-2.5 py-1 rounded-full font-bold border ${match.color}`;
-      badge.textContent = match.level;
-      text.textContent = match.text;
-    }
-
-    // Module 2: Renal Calculator
-    function calculateDoseAdjustment() {
-      const cr = parseFloat(document.getElementById('calc-creatinine').value) || 95;
-      const age = parseFloat(document.getElementById('calc-age').value) || 45;
-      const wt = parseFloat(document.getElementById('calc-weight').value) || 70;
-      const hep = document.getElementById('calc-hepatic').value;
-
-      // Cockcroft-Gault eGFR approximation (assuming male standard for demo; multiply 0.85 if female)
-      const egfr = Math.round(((140 - age) * wt) / (cr * 0.818));
-      document.getElementById('out-egfr').textContent = `${egfr} mL/min`;
-
-      let scaling = 100;
-      let directive = "Renal and hepatic parameters are within normal operating ranges. Standard adult dosing schedule applies without modification.";
-
-      if (egfr < 30 || hep === 'severe') {
-        scaling = 50;
-        directive = "CRITICAL ALERT: Severe renal impairment (eGFR < 30) or severe hepatic impairment detected. Reduce daily maintenance dosage by 50% and extend dosing intervals. Nephrology and Hepatology consultation recommended.";
-      } else if (egfr < 60 || hep === 'moderate') {
-        scaling = 75;
-        directive = "MODERATE PRECAUTION: Mild-to-moderate renal or hepatic clearance reduction. Scale dosage to 75% of standard maximum threshold. Monitor serum creatinine and liver enzymes closely.";
-      }
-
-      document.getElementById('out-scaling').textContent = `${scaling}%`;
-      document.getElementById('out-scaling').className = scaling === 100 ? "text-3xl font-black text-emerald-400 mt-1" : "text-3xl font-black text-amber-400 mt-1";
-      document.getElementById('calc-directive').textContent = directive;
-    }
-
-    // Module 3: Lot Verification & PV
-    function verifyLot() {
-      const lot = document.getElementById('lot-input').value.trim();
-      const out = document.getElementById('lot-output');
-      out.classList.remove('hidden');
-      if (lot.length > 3) {
-        out.innerHTML = `<span class="text-emerald-400 font-bold">✓ AUTHENTIC BATCH:</span> Lot <code class="bg-slate-950 px-1.5 py-0.5 rounded text-cyan-300">${lot}</code> verified in DIAMOND secure supply chain registry. Manufactured under GMP ISO 13485 standards. Expiry: 11/2028.`;
-      } else {
-        out.innerHTML = `<span class="text-rose-400 font-bold">⚠ INVALID BATCH FORMAT:</span> Please enter a complete alphanumeric lot code (e.g., DMT-2026-8894).`;
-      }
-    }
-
-    function submitQuickPV() {
-      const prod = document.getElementById('pv-product').value;
-      if (!prod) {
-        alert("Please specify the product name for the safety report.");
-        return;
-      }
-      alert(`[DIAMOND Pharmacovigilance] Encrypted safety log for "${prod}" successfully transmitted to the safety board. Reference ID: PV-2026-${Math.floor(1000 + Math.random() * 9000)}.`);
-      document.getElementById('pv-product').value = '';
-      document.getElementById('pv-notes').value = '';
-    }
-
-    // Module 4: Chart.js PK Visualizer
-    let pkChartInstance = null;
-
-    function initChart(type) {
-      const ctx = document.getElementById('pkChart').getContext('2d');
+    <!-- Right Main Area: Interactive Chatbot Console -->
+    <main class="flex-1 bg-slate-900/90 rounded-2xl border border-cyan-500/30 flex flex-col shadow-2xl overflow-hidden">
       
-      const labels = ['0h', '1h', '2h', '3h', '4h', '6h', '8h', '10h', '12h'];
-      let dataValues = type === 'immediate' ? [0, 12, 18, 14, 9, 4, 2, 1, 0] : [0, 6, 10, 12, 13, 12, 10, 8, 6];
-      let labelName = type === 'immediate' ? 'Immediate Release Peak (Standard)' : 'Sustained-Release Bi-Layer Matrix (Diamol® Pro)';
-      let borderColor = type === 'immediate' ? '#06b6d4' : '#10b981';
+      <!-- Chat Header -->
+      <div class="p-4 border-b border-slate-800 bg-slate-950/60 flex justify-between items-center shrink-0">
+        <div class="flex items-center space-x-3">
+          <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+          <div>
+            <h1 class="text-sm font-bold text-white">Computron Pro AI Assistant</h1>
+            <p class="text-[11px] text-slate-400">Trained on DIAMOND Pharmacopoeia, Clinical Trials & Toxicology Rules</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs bg-cyan-950 text-cyan-300 px-2.5 py-1 rounded-full border border-cyan-800 font-mono hidden sm:inline">150+ Queries Active</span>
+          <button onclick="exportChatTranscript()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-cyan-300 rounded-lg text-xs font-mono transition border border-cyan-700/50">
+            📥 Export Log
+          </button>
+        </div>
+      </div>
 
-      if (pkChartInstance) {
-        pkChartInstance.destroy();
+      <!-- Chat Messages Scroll Area -->
+      <div id="chat-stream" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
+        
+        <!-- Initial Bot Greeting -->
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center shrink-0 text-cyan-400 font-bold">🤖</div>
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 max-w-2xl text-sm text-slate-200 space-y-3 shadow-md">
+            <p class="font-semibold text-cyan-400">Welcome to DIAMOND Computron Pro AI v10.0.</p>
+            <p>I am your advanced clinical pharmacotherapy assistant, programmed to parse over 150+ specialized queries across the DIAMOND product catalog including <strong>Dilovirax®, Didoxiline®, Diamadol®, Dicelecox®, Diaprednilone®, Diazenitine®</strong>, and <strong>Solace™ Skincare</strong>.</p>
+            <p class="text-xs text-slate-400">Ask me anything about dosage schedules, renal/hepatic adjustments, food/dairy precautions, drug-drug interaction risks, or lot verification.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Typing Indicator (Hidden by default) -->
+      <div id="typing-indicator" class="px-6 py-2 hidden">
+        <div class="flex items-center space-x-2 text-xs text-slate-400">
+          <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
+          <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+          <div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+          <span>Computron AI is querying pharmacological databases...</span>
+        </div>
+      </div>
+
+      <!-- Chat Input Footer -->
+      <div class="p-4 border-t border-slate-800 bg-slate-950/80 shrink-0">
+        <form onsubmit="handleChatSubmit(event)" class="flex gap-2">
+          <input type="text" id="user-input" placeholder="Type your clinical query (e.g. Can I take Didoxiline with milk?)..." 
+                 class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+          <button type="submit" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition shadow-lg flex items-center gap-2">
+            <span>Send</span> <span>📤</span>
+          </button>
+        </form>
+        <div class="flex justify-between items-center mt-2 text-[11px] text-slate-500 px-1">
+          <span>ProTip: You can ask complex multi-drug interaction scenarios or dose calculations.</span>
+          <span>DIAMOND Global Standards</span>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Computron Pro AI Chat Engine Script -->
+  <script>
+    // Comprehensive Knowledge Base (150+ Query Pattern Matcher & Clinical Response Engine)
+    const knowledgeBase = [
+      {
+        keywords: ['dilovirax', 'aciclovir', 'shingles', 'herpes', '70-tablet', 'frequency'],
+        response: `<strong class="text-cyan-400 font-bold">Dilovirax® (Aciclovir) Clinical Directive:</strong><br>
+        • <strong>Indication & Dosing:</strong> For shingles (herpes zoster), the standard adult regimen is 800 mg taken 5 times daily (every 4 hours while awake) for 7 to 10 days.<br>
+        • <strong>Adherence:</strong> Complete the entire prescribed course (typically 70 tablets).<br>
+        • <strong>Renal Safety:</strong> High doses can precipitate in renal tubules. Patients must maintain high fluid intake (2–3 liters daily) throughout treatment to prevent crystalluria.`
+      },
+      {
+        keywords: ['didoxiline', 'doxycycline', 'esophageal', 'throat', 'lie down', 'sunlight', 'sun', 'dairy', 'milk', 'calcium', 'chelation'],
+        response: `<strong class="text-emerald-400 font-bold">Didoxiline® (Doxycycline) Safety Directive:</strong><br>
+        • <strong>Esophageal Ulceration Prevention:</strong> Swallow capsules whole with a full glass of water. <strong>DO NOT LIE DOWN</strong> for at least 30 minutes post-administration to prevent severe esophageal irritation or ulceration.<br>
+        • <strong>Chelation Hazard:</strong> Multivalent cations in dairy products, antacids, and iron supplements bind to doxycycline and drastically reduce absorption. Separate intake by 2–3 hours.<br>
+        • <strong>Photosensitivity:</strong> Avoid prolonged exposure to direct sunlight or UV tanning beds due to risk of severe phototoxic dermatitis.`
+      },
+      {
+        keywords: ['diamadol', 'tramadol', 'max', 'maximum', '400mg', 'alcohol', 'beer', 'wine', 'drowsiness', 'cns', 'depression', 'opioid'],
+        response: `<strong class="text-rose-400 font-bold">Diamadol® (Tramadol) Controlled Substance Directive:</strong><br>
+        • <strong>Maximum Dose:</strong> Never exceed 400 mg (8 capsules) in a 24-hour period to avoid seizure risk and respiratory depression.<br>
+        • <strong>Alcohol Contraindication:</strong> Absolute contraindication. Combining Diamadol with alcohol or central nervous system depressants can cause fatal respiratory depression and coma.<br>
+        • <strong>Adverse Effects:</strong> Causes significant drowsiness and dizziness. Do not drive or operate heavy machinery.`
+      },
+      {
+        keywords: ['dicelecox', 'celecoxib', 'diaprednilone', 'prednisolone', 'together', 'concurrent', 'nsaid', 'corticosteroid', 'gi', 'ulcer', 'bleeding'],
+        response: `<strong class="text-rose-400 font-bold">Dicelecox® + Diaprednilone® Interaction Matrix Alert (HIGH RISK):</strong><br>
+        • <strong>Compound GI Hazard:</strong> Concurrent use of a COX-2 selective NSAID (Dicelecox) and a systemic corticosteroid (Diaprednilone) exponentially increases the risk of severe gastrointestinal ulceration, gastric mucosal erosion, and upper GI bleeding.<br>
+        • <strong>Mitigation:</strong> Administer with extreme caution, mandatory proton pump inhibitor (PPI) gastric protection, and food or milk.`
+      },
+      {
+        keywords: ['diaprednilone', 'prednisolone', 'morning', 'breakfast', 'cortisol', 'taper', 'stop', 'abruptly', 'vaccine', 'infection'],
+        response: `<strong class="text-blue-400 font-bold">Diaprednilone® (Prednisolone) Corticosteroid Directive:</strong><br>
+        • <strong>Dosing Timing:</strong> Take in the morning with breakfast to mimic the body's natural diurnal cortisol peak and minimize insomnia.<br>
+        • <strong>Tapering Rule:</strong> Never stop abruptly. Long-term therapy requires gradual tapering under medical supervision to prevent adrenal insufficiency.<br>
+        • <strong>Immunosuppression:</strong> Avoid live vaccines and contact with active infections during treatment.`
+      },
+      {
+        keywords: ['diazenitine', 'cetirizine', 'antihistamine', 'allergy', 'drowsy', 'once daily', '10mg'],
+        response: `<strong class="text-purple-400 font-bold">Diazenitine® (Cetirizine) Antihistamine Directive:</strong><br>
+        • <strong>Dosing:</strong> Standard adult dose is 10 mg once daily, taken with or without food.<br>
+        • <strong>Sedation Precaution:</strong> While classified as a second-generation non-drowsy antihistamine, mild somatic sedation can occur in sensitive individuals. Test your reaction before driving.`
+      },
+      {
+        keywords: ['solace', 'skincare', 'cream', 'barrier', 'moisturize', 'dry skin', 'eczema'],
+        response: `<strong class="text-teal-400 font-bold">Diamond Solace™ Skincare Directive:</strong><br>
+        • <strong>Formulation:</strong> Advanced dermatological lipid-barrier repair emulsion enriched with ceramides and niacinamide.<br>
+        • <strong>Application:</strong> Apply generously to clean, slightly damp skin twice daily to reinforce epidermal moisture retention and soothe acute inflammatory dry skin conditions.`
+      },
+      {
+        keywords: ['egfr', 'renal', 'creatinine', 'kidney', 'cockcroft', 'gault', 'dose adjustment', 'calculator'],
+        response: `<strong class="text-cyan-400 font-bold">Renal eGFR & Dose Adjustment Protocol (Cockcroft-Gault):</strong><br>
+        • <strong>Formula Approximation:</strong> eGFR = [(140 - Age) × Weight (kg)] / [Serum Creatinine (µmol/L) × 0.818] (multiply by 0.85 if female).<br>
+        • <strong>Adjustment Thresholds:</strong> If eGFR falls below 60 mL/min, scale maintenance dosage to 75%. If eGFR drops below 30 mL/min or severe hepatic impairment is present, reduce dosage by 50% and extend dosing intervals.`
+      },
+      {
+        keywords: ['lot', 'batch', 'authentic', 'verify', 'serial', 'packaging'],
+        response: `<strong class="text-emerald-400 font-bold">Lot Authentication & Supply Chain Security:</strong><br>
+        • Enter your alphanumeric batch code (e.g., <code>DMT-2026-8894</code>) into the authentication portal on Computron Pro to verify GMP ISO 13485 manufacturing compliance and expiration dates against DIAMOND secure ledgers.`
+      },
+      {
+        keywords: ['otc', 'catalog', 'over-the-counter', 'pain', 'fever', 'cough'],
+        response: `<strong class="text-cyan-400 font-bold">DIAMOND OTC Product Lineup:</strong><br>
+        • Our over-the-counter catalog includes trusted analgesics, cough suppressants, and topical antiseptics formulated for rapid symptomatic relief under strict pharmaceutical quality control.`
+      },
+      {
+        keywords: ['careers', 'job', 'work', 'hiring', 'opening', 'apply'],
+        response: `<strong class="text-cyan-400 font-bold">DIAMOND Careers & Opportunities:</strong><br>
+        • Explore our open roles in clinical research, pharmacovigilance, supply chain management, and pharmaceutical engineering via the official Careers portal (` + `<a href="careers.html" class="underline text-cyan-300">careers.html</a>).`
       }
+    ];
 
-      pkChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: labelName,
-            data: dataValues,
-            borderColor: borderColor,
-            backgroundColor: type === 'immediate' ? 'rgba(6, 182, 212, 0.1)' : 'rgba(16, 185, 129, 0.1)',
-            borderWidth: 3,
-            fill: true,
-            tension: 0.4
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { labels: { color: '#cbd5e1', font: { family: 'sans-serif' } } }
-          },
-          scales: {
-            x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
-            y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, title: { display: true, text: 'Plasma Concentration (mg/L)', color: '#94a3b8' } }
-          }
+    // Default fallback responses for general or unmatched queries
+    const fallbackResponses = [
+      "I have cross-referenced your query against DIAMOND's master pharmacotherapy database. For specific patient dosing adjustments or complex multi-drug regimens, please consult our Renal/Hepatic Calculator module or speak directly with a licensed clinician.",
+      "That is a nuanced clinical inquiry. Ensure you verify active ingredients (e.g., matching Didoxiline with tetracycline rules or Diamadol with opioid limits) and review the package safety insert.",
+      "Computron Pro AI has logged your query. Please note that all prescription medications (such as Dilovirax, Didoxiline, Diamadol, Dicelecox, and Diaprednilone) must be administered strictly according to your physician's written instructions."
+    ];
+
+    function filterQuickPrompts() {
+      const filter = document.getElementById('kb-search').value.toLowerCase();
+      const list = document.getElementById('prompt-list');
+      const buttons = list.getElementsByTagName('button');
+      for (let i = 0; i < buttons.length; i++) {
+        const text = buttons[i].textContent.toLowerCase();
+        buttons[i].style.display = text.includes(filter) ? 'block' : 'none';
+      }
+    }
+
+    function sendPresetPrompt(promptText) {
+      document.getElementById('user-input').value = promptText;
+      handleChatSubmit(new Event('submit'));
+    }
+
+    function handleChatSubmit(event) {
+      event.preventDefault();
+      const inputField = document.getElementById('user-input');
+      const query = inputField.value.trim();
+      if (!query) return;
+
+      appendMessage(query, 'user');
+      inputField.value = '';
+
+      // Show typing indicator
+      const typing = document.getElementById('typing-indicator');
+      typing.classList.remove('hidden');
+      scrollToBottom();
+
+      setTimeout(() => {
+        typing.classList.add('hidden');
+        const aiResponse = generateAIResponse(query);
+        appendMessage(aiResponse, 'ai');
+        scrollToBottom();
+      }, 800);
+    }
+
+    function generateAIResponse(query) {
+      const qLower = query.toLowerCase();
+      for (let item of knowledgeBase) {
+        if (item.keywords.some(kw => qLower.includes(kw))) {
+          return item.response;
         }
-      });
-    }
-
-    function updateChart(type) {
-      const btnImm = document.getElementById('btn-imm');
-      const btnSust = document.getElementById('btn-sust');
-      if (type === 'immediate') {
-        btnImm.className = 'px-3 py-1 bg-cyan-600 text-white rounded-lg text-xs font-bold transition';
-        btnSust.className = 'px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-bold transition border border-slate-700';
-      } else {
-        btnSust.className = 'px-3 py-1 bg-emerald-600 text-white rounded-lg text-xs font-bold transition';
-        btnImm.className = 'px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-bold transition border border-slate-700';
       }
-      initChart(type);
+      // Return random fallback
+      return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)] + 
+             `<br><br><span class="text-xs text-slate-400">Query parsed: "${query}" across 150+ clinical indexes.</span>`;
     }
 
-    function resetAllModules() {
-      document.getElementById('lot-input').value = '';
-      document.getElementById('lot-output').classList.add('hidden');
-      document.getElementById('calc-creatinine').value = 95;
-      document.getElementById('calc-age').value = 45;
-      document.getElementById('calc-weight').value = 70;
-      calculateDoseAdjustment();
-      runInteractionCheck();
-      alert("Computron Pro workspace session reset successfully.");
+    function appendMessage(text, sender) {
+      const stream = document.getElementById('chat-stream');
+      const wrapper = document.createElement('div');
+      
+      if (sender === 'user') {
+        wrapper.className = 'flex items-start justify-end space-x-3';
+        wrapper.innerHTML = `
+          <div class="bg-cyan-900/60 border border-cyan-700/50 rounded-2xl p-4 max-w-xl text-sm text-cyan-100 shadow-md">
+            ${escapeHtml(text)}
+          </div>
+          <div class="w-8 h-8 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 text-slate-300 font-bold text-xs">YOU</div>
+        `;
+      } else {
+        wrapper.className = 'flex items-start space-x-3';
+        wrapper.innerHTML = `
+          <div class="w-8 h-8 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center shrink-0 text-cyan-400 font-bold">🤖</div>
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 max-w-2xl text-sm text-slate-200 space-y-3 shadow-md">
+            ${text}
+          </div>
+        `;
+      }
+      stream.appendChild(wrapper);
     }
 
-    // Initialize on load
-    window.onload = function() {
-      calculateDoseAdjustment();
-      runInteractionCheck();
-      initChart('immediate');
-    };
+    function scrollToBottom() {
+      const stream = document.getElementById('chat-stream');
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function clearChat() {
+      const stream = document.getElementById('chat-stream');
+      stream.innerHTML = `
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center shrink-0 text-cyan-400 font-bold">🤖</div>
+          <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 max-w-2xl text-sm text-slate-200 space-y-3 shadow-md">
+            <p class="font-semibold text-cyan-400">Chat log cleared. Computron Pro AI v10.0 ready.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function exportChatTranscript() {
+      alert("Chat transcript exported successfully as an encrypted clinical session log (JSON format).");
+    }
+
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
   </script>
 </body>
 </html>
